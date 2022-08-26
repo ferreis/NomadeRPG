@@ -1,5 +1,7 @@
 #include <iostream>
+#include <fstream>
 using namespace std;
+
  //atributos do jogador
 struct Personagem
 {
@@ -29,7 +31,7 @@ void Nomaderpg(){
    cout<<"───────────────────────────────\n";
 }
  //função de inicialização do jogador
- Personagem IniJogador(Personagem &jogador){
+Personagem IniJogador(Personagem &jogador){
    int raca;
    int classe;
    cout << "\nnome:";
@@ -109,18 +111,26 @@ void tela_status(Personagem status){
 }
 
 void Menu(){
-    //Nomaderpg();
+   int espera;
+    Nomaderpg();
     string desenhomenu[31][11];
     for (int x = 0; x < 31;x++){
         for (int y = 0; y < 11; y++){
-            if (x==0||y==0||x==30||y==10)
-            {
+            if(x==10){
+                desenhomenu[x][1]="            Menu            ";
+                desenhomenu[x][3]="         1- Inicio          ";
+                desenhomenu[x][5]="         2- Status          ";
+                desenhomenu[x][7]="         3- Salvar          ";
+                desenhomenu[x][9]="         4-  Sair           ";
+            }else if (x==0||y==0||x==30||y==10){
                 desenhomenu[x][y]="#";
-            } 
-            else{
+            }
+            else if(y%2==0){
+                desenhomenu[x][y]="-";
+            }else if(y%2 == 0){
                 desenhomenu[x][y] = " ";
             }   
-        }        
+        }     
     }
        for (int y = 0; y < 11;y++){
         for (int x = 0; x < 31; x++)
@@ -129,4 +139,12 @@ void Menu(){
         }   
         cout<<endl;
     }
+    cin>>espera;
 }
+void historia (){
+   fstream arquivo;
+   arquivo.open("jogo.txt",fstream::in|fstream::out|fstream::app);
+   
+}
+/*ofstream escrever
+ifsteam ler*/

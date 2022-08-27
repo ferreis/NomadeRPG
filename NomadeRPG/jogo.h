@@ -1,5 +1,5 @@
 #include <iostream>
-#include <fstream>
+#include <stdlib.h>
 using namespace std;
 
  //atributos do jogador
@@ -24,35 +24,36 @@ struct Equipamento
    int ipotion;
 };
 void Nomaderpg(){
-   cout<<"╔═╦╗────────────╔╗───╔═╗╔═╗╔══╗\n";
+   /*cout<<"╔═╦╗────────────╔╗───╔═╗╔═╗╔══╗\n";
    cout<<"║║║║╔═╗╔══╗╔═╗─╔╝║╔═╗║╬║║╬║║╔═╣\n";
    cout<<"║║║║║╬║║║║║║╬╚╗║╬║║╩╣║╗╣║╔╝║╚╗║\n";
    cout<<"╚╩═╝╚═╝╚╩╩╝╚══╝╚═╝╚═╝╚╩╝╚╝─╚══╝\n";
-   cout<<"───────────────────────────────\n";
+   cout<<"───────────────────────────────\n";*/
 }
  //função de inicialização do jogador
-Personagem IniJogador(Personagem &jogador){
+void IniJogador(Personagem &jogador){
+
    int raca;
    int classe;
-   cout << "\nnome:";
+   cout << "CRIE SEU PERSONAGEM\n\nNome:";
    cin >> jogador.snome;
-   system("clear");
+   system("cls");
    Nomaderpg();
    cout << "Escolha a sua Raca: \n 1) Anao \n 2) Elfo \n 3) Halfling\n\nEscolha : \n";
    cin >> raca;
-   system("clear");
+   system("cls");
    Nomaderpg();
    while(raca < 1 || raca > 3){
       cout << "Opcao inexistente, tente novamente:\n";
       cin >> raca;
-      system("clear");
+      system("cls");
       cout << "Escolha a sua Raca: \n 1) Anao \n 2) Elfo \n 3) Halfling\n\nEscolha : \n";
    }
    switch(raca){
       case 1:
          jogador.ifor+=1;
          jogador.ivida+=1;
-         jogador.sraca = "Anao";
+         jogador.sraca = "Anão";
          break;
       case 2:
          jogador.imagia+=1;
@@ -66,9 +67,9 @@ Personagem IniJogador(Personagem &jogador){
          jogador.sraca = "Halfling";
          break;
    }
-   system("clear");
+   system("cls");
    Nomaderpg();
-   cout << "Escolha a Classe: \n 1) Guerreiro \n 2) Mago \n 3) Ladino: \n"; 
+   cout << "Escolha a Classe: \n 1) Guerreiro \n 2) Mago \n 3) Ladino: \n";
    cin>>classe;
    switch (classe) {
       case 1:
@@ -90,7 +91,7 @@ Personagem IniJogador(Personagem &jogador){
          jogador.ivida+=2;
          jogador.isorte+=3;
          jogador.sclasse = "Ladino";
-         break;        
+         break;
       default:
          jogador.ifor+=2;
          jogador.idex+=2;
@@ -100,19 +101,22 @@ Personagem IniJogador(Personagem &jogador){
          jogador.sclasse = "Aldeao";
          break;
    }
-   system("clear");
+   system("cls");
 }
 void tela_status(Personagem status){
-    cout<<"╭══════════════════════════════════════════════════════════════════════════╮"<<endl;
+    //cout<<"╭══════════════════════════════════════════════════════════════════════════╮"<<endl;
     cout<<"|Nome:"<< status.snome<< " |Classe:"<< status.sclasse<<" |Raça:"<< status.sraca<<"| \n";
     cout<<"|Força:"<< status.ifor<< "    |Destreza:"<< status.idex<<" |Sorte:"<< status.isorte<<"| \n";
     cout<<"|Magia:"<< status.imagia<< "    |Vida:"<< status.ivida<<" |Defesa:"<< status.idef<<"| \n";
-    cout<<"╰══════════════════════════════════════════════════════════════════════════╯";
+    //cout<<"╰══════════════════════════════════════════════════════════════════════════╯";
+}
+void IniJogo(Personagem P1){
+
 }
 
-void Menu(){
-   int espera;
-    Nomaderpg();
+void Menu(Personagem P1){
+    int espera;
+    int voltar;
     string desenhomenu[31][11];
     for (int x = 0; x < 31;x++){
         for (int y = 0; y < 11; y++){
@@ -129,22 +133,60 @@ void Menu(){
                 desenhomenu[x][y]="-";
             }else if(y%2 == 0){
                 desenhomenu[x][y] = " ";
-            }   
-        }     
+            }
+        }
     }
        for (int y = 0; y < 11;y++){
         for (int x = 0; x < 31; x++)
         {
               cout << desenhomenu[x][y];
-        }   
+        }
         cout<<endl;
     }
     cin>>espera;
+    system("cls");
+    switch(espera){
+    case 1:
+        break;
+    case 2:
+        tela_status(P1);
+        cout << "Para voltar digite 1: ";
+        cin >> voltar;
+        system("cls");
+        Menu(P1);
+        break;
+    }
+}
+int escolhas3(int &vector[]){
+   if (vector[0]==1)
+   {
+      
+   }
+   else{
+
+   }
+}
+int escolhas2(){
+
+}
+int escolhas1(){
+
 }
 void historia (){
+   int vector[10], escolhas;
    fstream arquivo;
    arquivo.open("jogo.txt",fstream::in|fstream::out|fstream::app);
-   
+   cin >> escolhas;
+   switch (escolhas)
+   {
+   case 1:
+      escolhas1(vector);
+      break;
+   case 2:
+      escolhas2();
+      break;
+   case 3:
+      escolhas3();
+      break;
+   }
 }
-/*ofstream escrever
-ifsteam ler*/

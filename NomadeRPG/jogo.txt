@@ -1,1 +1,59 @@
-esse e so um texto de teste para ver se o comando funciona, para puxar esse mesmo texto
+Você acorda no lugar umido e lamecento ainda atorduado olha para cima e ver dois sol no ceu a larajado.
+        1-ficar deitado 
+            lentamente o sono bate, sem perceber vocce dorme, vou um criatura rugir, esta de noite e nao consegui ver um palmo de sua frente
+                1-voce se levanta aos pulo e busca onde esta o som.
+                2-criar uma chama usando magia
+                    (mago)
+                    consegui uma chama to que ilumina tao bem quanto um tocha na palma da mão, mais infelimente voce atai a criatua para sua direção, nao consegui destiquila, ela te ataca com um colpe mortal(FiM)
+                    (Não mago)
+                    voce temta muito criar magia na palma da mão... até que se lembra que nao e um mago, 
+                    (Opção_vulto)
+                    voce sente uma dor insuportavel to peito, olha e ver um vulto antes do sono eterno.
+                3-Fica parado
+                (Opção_vulto)
+                4-corre as escura
+                    voce corre sem se importa com mas nada
+                    (Ladino)
+                        voce consegui
+                            +(opçao futura)
+                    (Não Ladino)
+                        Voce tropeça num galho de arvore por corre as escuras,
+                            +(Opção_vulto)
+        2-levantar
+            Voce se levanta ajeitado a sua roupa, 
+                +(Roupa de Mago)
+                    sedosa e leve como todo o manto de mago e incrivelmente quente quando percisa, olha de relance para o chão e ve seu cajado
+                        1-Pagar
+                            voce paga o cajado do chão.
+                        2-abandonar
+                            voce deixa o cajado no chão
+                +(Roupa de ladino)
+                    uma armadura de couro sobre o peito, você ver um adagar e uma bolsa de dinheiro
+                        1-Pagar
+                            voce paga a adaga e a bolsa do chão.
+                        2-abandonar
+                            voce deixa a adaga e a bolsa do chão
+                +(Roupa de guerreiro)
+                    sua armadura de metal sobre todo o corpo, você ve uma espada curta e um escudo no chão
+                        1-Pagar
+                            voce paga a espada e o escudo do chão.
+                        2-abandonar
+                            voce deixa a espada e o escudo do chão
+        3-sentar
+            você vai lentamente levantado ate conseguir se sentar, respirando profundamente você pensa no que fazer
+                1-analisar o terreno
+                    você para e analisar melhor o terreno lamacento em sua volta, e consegui ver per marcas de pegadas
+                        (ladino)(mago)(elfo)
+                            você consegui identificar, essa são as marcas de um Wendigo
+                        (Não (ladino)(mago)(elfo))
+                            Você nunca viu esse tipo de pagada... 
+                                1-espera a criaturaa voltar
+                                    passando uma hora, os 2 solis se pondo
+                                        1-ficar 
+                                        2-buscar um lugar para passar a noite
+                                2-buscar um rio em silencio
+                2-usar magia de voo
+                3-buscar uma caverna
+        4-sentir o bolso
+
+        

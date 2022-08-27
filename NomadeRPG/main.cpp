@@ -17,12 +17,12 @@ int main()
   bool sair = false;
   Personagem jogador;
   Nomaderpg();
-  IniJogador(jogador);
-  do{
+  //IniJogador(jogador);
+  /*do{
    // Menu();
+  cout << "\n \n \n \n \n \n ";
+  } while (sair == false);*/
     historia();
 
-  cout << "\n \n \n \n \n \n ";
-  } while (sair == false);
 }
  

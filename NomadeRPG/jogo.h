@@ -1,5 +1,6 @@
 #include <iostream>
 #include <stdlib.h>
+#include <fstream>
 using namespace std;
 
  //atributos do jogador
@@ -23,13 +24,6 @@ struct Equipamento
    string sextra;
    int ipotion;
 };
-void Nomaderpg(){
-   /*cout<<"╔═╦╗────────────╔╗───╔═╗╔═╗╔══╗\n";
-   cout<<"║║║║╔═╗╔══╗╔═╗─╔╝║╔═╗║╬║║╬║║╔═╣\n";
-   cout<<"║║║║║╬║║║║║║╬╚╗║╬║║╩╣║╗╣║╔╝║╚╗║\n";
-   cout<<"╚╩═╝╚═╝╚╩╩╝╚══╝╚═╝╚═╝╚╩╝╚╝─╚══╝\n";
-   cout<<"───────────────────────────────\n";*/
-}
  //função de inicialização do jogador
 void IniJogador(Personagem &jogador){
 
@@ -38,11 +32,9 @@ void IniJogador(Personagem &jogador){
    cout << "CRIE SEU PERSONAGEM\n\nNome:";
    cin >> jogador.snome;
    system("cls");
-   Nomaderpg();
    cout << "Escolha a sua Raca: \n 1) Anao \n 2) Elfo \n 3) Halfling\n\nEscolha : \n";
    cin >> raca;
    system("cls");
-   Nomaderpg();
    while(raca < 1 || raca > 3){
       cout << "Opcao inexistente, tente novamente:\n";
       cin >> raca;
@@ -68,7 +60,6 @@ void IniJogador(Personagem &jogador){
          break;
    }
    system("cls");
-   Nomaderpg();
    cout << "Escolha a Classe: \n 1) Guerreiro \n 2) Mago \n 3) Ladino: \n";
    cin>>classe;
    switch (classe) {
@@ -101,22 +92,31 @@ void IniJogador(Personagem &jogador){
          jogador.sclasse = "Aldeao";
          break;
    }
-   system("cls");
 }
 void tela_status(Personagem status){
-    //cout<<"╭══════════════════════════════════════════════════════════════════════════╮"<<endl;
+    cout<<"╭══════════════════════════════════════════════════════════════════════════╮"<<endl;
     cout<<"|Nome:"<< status.snome<< " |Classe:"<< status.sclasse<<" |Raça:"<< status.sraca<<"| \n";
     cout<<"|Força:"<< status.ifor<< "    |Destreza:"<< status.idex<<" |Sorte:"<< status.isorte<<"| \n";
     cout<<"|Magia:"<< status.imagia<< "    |Vida:"<< status.ivida<<" |Defesa:"<< status.idef<<"| \n";
-    //cout<<"╰══════════════════════════════════════════════════════════════════════════╯";
+    cout<<"╰══════════════════════════════════════════════════════════════════════════╯";
 }
 void IniJogo(Personagem P1){
-
+   ifstream salas;
+   string line;
+   salas.open("jogo.txt");
+   for (int i = 0; i < 30; i++)
+   {
+      getline(salas, line);
+      if (i<7)
+      {
+         cout << line<<endl;
+      }
+   }
+   
+   salas.close();
 }
-
-void Menu(Personagem P1){
+void Menu(Personagem P1, bool &sair){
     int espera;
-    int voltar;
     string desenhomenu[31][11];
     for (int x = 0; x < 31;x++){
         for (int y = 0; y < 11; y++){
@@ -151,42 +151,11 @@ void Menu(Personagem P1){
     case 2:
         tela_status(P1);
         cout << "Para voltar digite 1: ";
-        cin >> voltar;
         system("cls");
-        Menu(P1);
+        Menu(P1,sair);
         break;
+      case 4:
+         sair = true;
+      break;
     }
-}
-int escolhas3(int &vector[]){
-   if (vector[0]==1)
-   {
-      
-   }
-   else{
-
-   }
-}
-int escolhas2(){
-
-}
-int escolhas1(){
-
-}
-void historia (){
-   int vector[10], escolhas;
-   fstream arquivo;
-   arquivo.open("jogo.txt",fstream::in|fstream::out|fstream::app);
-   cin >> escolhas;
-   switch (escolhas)
-   {
-   case 1:
-      escolhas1(vector);
-      break;
-   case 2:
-      escolhas2();
-      break;
-   case 3:
-      escolhas3();
-      break;
-   }
 }

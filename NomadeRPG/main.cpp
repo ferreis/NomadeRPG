@@ -1,28 +1,20 @@
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
-#include "inteface.h"
+#include <windows.h>
 #include "jogo.h"
  using namespace std;
- void escrever(string text, int time){
-  for(int i =0; i<text.size();i++){
-    sleep(time);
-    cout<<text[i];
-  }
- }
- 
-int main()
-{
+int main(){
   bool sair = false;
+  int espera;
   Personagem jogador;
-  Nomaderpg();
-  //IniJogador(jogador);
-  /*do{
-   // Menu();
-  cout << "\n \n \n \n \n \n ";
-  } while (sair == false);*/
-    historia();
-
+  IniJogador(jogador);
+  do
+  {
+  IniJogo(jogador);
+  Menu(jogador,sair);
+  system("pause");
+    
+  } while (sair != true);
 }
  

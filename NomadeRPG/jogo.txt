@@ -1,25 +1,23 @@
-Você acorda no lugar úmido e lamacento, ainda atordoado, 
-olha para cima e ver dois sóis no céu a laranjado.
+Voce acorda em um lugar umido e lamacento, ainda atordoado, 
+olha para cima e ve dois sois no ceu alaranjado.
+
 =========================================================
 *        1-ficar deitado                                *
 *        2-levantar                                     *
-*        3-sentar                                       *
 =========================================================
-
-Lentamente o sono bate, sem perceber você dorme, 
-vou uma criatura rugir, está de noite e não consegui
-ver um palmo de sua frente
+Lentamente o sono bate, sem perceber voce dorme, 
+ouviu uma criatura rugir, esta de noite e nao consegue
+ver um palmo a sua frente.
 =========================================================
 *        1-Levanta rapidamente                          *
 *        2-Criar uma chama usando magia                 *
-*        3-Ficar sentado                                *
 =========================================================
 (MAGO)
+
 =========================================================
-consegui uma chama to que ilumina tao bem quanto um tocha
-na palma da mão, mais infelimente voce atai a criatua para 
-sua direção, nao consegui destiquila, ela te ataca com um
-golpe mortal(FiM)
+Consegue uma chama que ilumina tao bem quanto um tocha
+na palma da mão, mais infelizmente voce atrai a criatua para 
+sua direção e ela te ataca com um golpe mortal.(FiM)
 =========================================================
 (NAO(MAGO))
 =========================================================

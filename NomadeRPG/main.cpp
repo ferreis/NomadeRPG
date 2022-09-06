@@ -6,7 +6,7 @@
  int main()
  {
     Personagem P1;
-    Menu(P1);
+    Menu(P1, f);
 
 
 

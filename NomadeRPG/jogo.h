@@ -5,13 +5,15 @@
 #include <stdlib.h>
 #include <fstream>
 #include <windows.h>
+#include <time.h>
 
 using namespace std;
 
-ifstream salas;
+ifstream salas, menu;
 fstream save;
 string line;
-int escolha, p = 0, q = 0, c=0;
+bool fruit;
+int escolha, p = 0, q = 0, c=0, f=0, chec[30], *v[30];
  //atributos do jogador
 struct Personagem
 {
@@ -33,15 +35,6 @@ struct Equipamento
    string sextra;
    int ipotion;
 };
-struct Fase{
-    int I, F;
-};
-
-void Fases(Fase &s, int &x){
-    s.I = x;
-    x = x + 7;
-    s.F = x;
-}
 
 /*void Nomaderpg(){
 cout << "╔═╦╗────────────╔╗───╔═╗╔═╗╔══╗\n";
@@ -130,19 +123,280 @@ void tela_status(Personagem status){
     cout<<"----------------------------------------------------------------------------" << endl;
 }
 
-void escrever(Personagem &P1, Fase s[][3],int &p, int &q){
+void escrever(int p, int q,int &escolha){
     salas.open("jogo.txt");
-    for(int m=0; m<(s[p][q].F); m++)
+    for(int m=0; m<q; m++)
     {
         getline(salas,line);
-        if(m >= (s[p][q].I)){
+        if(m >= p){
             cout << line<< endl;
         }
     }
     salas.close();
-    cout << "Escolha(1, 2, 3(Menu)) : ";
+    cout << "Escolha (Menu:5) : ";
     cin >> escolha;
     system("cls");
+}
+
+    void Pantano(Personagem &P1, int &f){
+    escrever(0, 7, escolha);
+    if(escolha == 1){
+        f=50;
+    }
+    else if(escolha == 2){
+        escrever(8, 18, escolha);
+        if(escolha == 1){
+            f=1;
+        }
+        else if(escolha == 2){
+            f=2;
+        }
+    }
+}
+
+void Rio(Personagem &P1, int &f){
+    if(chec[1]==0){
+        escrever(19, 27, escolha);
+        if(escolha == 1){
+            if(P1.sraca != "Halfling")
+            {
+                cout << "Fruta venenosa: -1 de vida\n\n";
+                system("pause");
+                system("cls");
+                P1.ivida--;
+            }
+            else{
+                cout << "Voce se sente mais forte: +1 de forca\n\n";
+                system("pause");
+                system("cls");
+                P1.ifor++;
+            }
+        }
+        else if(escolha == 2){
+            cout << "Fruta adiquirida!\n\n";
+            system("pause");
+            system("cls");
+            fruit = true;
+        }
+        chec[1]=1;
+    }
+    escrever(28, 36, escolha);
+    if(escolha == 1){
+        escrever(37,44, escolha);
+        if(escolha == 1){
+            if(P1.sraca == "Anao"){
+                f=50;
+            }
+            else{
+                f=2;
+            }
+        }
+    }
+    else if(escolha == 2){
+        f=0;
+    }
+}
+
+void Cabana(Personagem P1, int &f){
+    escrever(45, 55, escolha);
+    if(escolha == 1){
+        f=3;
+    }
+    else if(escolha == 2){
+
+    }
+}
+
+void salvar(Personagem P1, int p, int q, int chec[]){
+    save.open("save.csv");
+    save << "sep=, \n";
+    save << P1.snome << "\n";
+    save << P1.sclasse << "\n";
+    save << P1.sraca << "\n";
+    save << P1.ifor << "\n";
+    save << P1.idex << "\n";
+    save << P1.isorte << "\n";
+    save << P1.ivida << "\n";
+    save << P1.idef << "\n";
+    save << P1.imagia<< "\n";
+    save << f << "\n";
+    for(int i=0; i<30; i++)
+    {
+        save << chec[i] << "\n";
+    }
+    save.close();
+    cout << "Salvamento realizado com sucesso!!\n";
+    Sleep(2000);
+    system("cls");
+}
+
+void carregar(Personagem &P1, int &p, int &q, int *v[]){
+    save.open("save.csv");
+    string load;
+    getline(save, load);
+    getline(save, P1.snome);
+    getline(save, P1.sclasse);
+    getline(save, P1.sraca);
+    getline(save, load);
+    P1.ifor = atoi(load.c_str());
+    getline(save, load);
+    P1.idex = atoi(load.c_str());
+    getline(save, load);
+    P1.isorte = atoi(load.c_str());
+    getline(save, load);
+    P1.ivida = atoi(load.c_str());
+    getline(save, load);
+    P1.idef = atoi(load.c_str());
+    getline(save, load);
+    P1.imagia = atoi(load.c_str());
+    getline(save, load);
+    f = atoi(load.c_str());
+    for(int i=0; i<30; i++){
+        getline(save, load);
+        *v[i] = atoi(load.c_str());
+    }
+    save.close();
+    cout << "Carregamento realizado com sucesso!!\n";
+    Sleep(2000);
+    system("cls");
+}
+
+void Fase(Personagem &P1,int &f){
+    if(escolha == 5){}
+    else if (f == 0){
+        Pantano(P1, f);
+        Fase(P1, f);
+    }
+    else if(f == 1){
+        Rio(P1, f);
+        Fase(P1, f);
+    }
+    else if(f == 2){
+        Cabana(P1, f);
+        Fase(P1, f);
+    }
+    else if(f == 3){
+
+    }
+    else if(f == 4){
+
+    }
+    else if(f == 50){
+        cout << "MORREU!!\n\n";
+        system("pause");
+        system("cls");
+    }
+}
+
+void Menu(Personagem &P1, int &f){
+    Personagem P2;
+    srand(time(NULL));
+    int espera;
+    int voltar;
+    menu.open("menu.txt");
+    while(menu.eof() == false)
+    {
+        getline(menu,line);
+        cout << line<< endl;
+    }
+    menu.close();
+    cin>>espera;
+    system("cls");
+    switch(espera){
+    case 1:
+        if(c==0)
+        {
+            IniJogador(P1);
+            for(int i; i<30; i++)
+            {
+                chec[i]=0;
+            }
+        }
+        escolha=0;
+        c++;
+        Fase(P1, f);
+        Menu(P1, f);
+        break;
+    case 2:
+        tela_status(P1);
+        cout << "Para voltar digite 1: ";
+        cin >> voltar;
+        system("cls");
+        Menu(P1, f);
+        break;
+    case 3:
+        if(c!=0){
+            cout << "Deseja salvar realmente? (1-sim / 2-nao) ";
+            cin >> escolha;
+            system("cls");
+            if(escolha == 1){
+                salvar(P1, p, q, chec);
+            }
+        }
+        else{
+            cout << "NADA PARA SALVAR!";
+            Sleep(2000);
+            system("cls");
+        }
+        Menu(P1, f);
+        break;
+    case 4:
+        cout << "Deseja carregar um salvamento? (1-sim / 2-nao) ";
+        cin >> escolha;
+        system("cls");
+        if(escolha == 1){
+            for(int i=0; i<30; i++){
+                v[i] = &chec[i];
+            }
+            carregar(P1, p, q, v);
+        }
+        c++;
+        Menu(P1, f);
+        break;
+    case 5:
+        break;
+
+    }
+}
+/*cout << "Deseja comecar um novo jogo? (1-Sim / 2-Nao) ";
+        cin >> escolha;
+        system("cls");
+        if(escolha == 2){
+            Menu(P1);
+        }
+        else{*/
+
+
+#endif // JOGO_H_INCLUDED
+/*
+    string desenhomenu[31][13];
+    for (int x = 0; x < 31;x++){
+        for (int y = 0; y < 13; y++){
+            if(x==10){
+                desenhomenu[x][1]="            Menu            ";
+                desenhomenu[x][3]="         1- Jogar           ";
+                desenhomenu[x][5]="         2- Status          "    ;
+                desenhomenu[x][7]="         3- Salvar          ";
+                desenhomenu[x][9]="         4- Carregar        ";
+                desenhomenu[x][11]="         5- Sair            ";
+            }else if (x==0||y==0||x==30||y==12){
+                desenhomenu[x][y]="#";
+            }
+            else if(y%2==0){
+                desenhomenu[x][y]="-";
+            }else if(y%2 == 0){
+                desenhomenu[x][y] = " ";
+            }
+        }
+    }
+    for (int y = 0; y < 13;y++){
+        for (int x = 0; x < 31; x++)
+        {
+              cout << desenhomenu[x][y];
+        }
+        cout<<endl;
+    }
+
     if(q==0){
         switch(escolha){
         case 1:
@@ -172,144 +426,5 @@ void escrever(Personagem &P1, Fase s[][3],int &p, int &q){
         case 3:
             break;
         }
-    }
-}
+    }*/
 
-void salvar(Personagem P1, int p, int q){
-    save.open("save.csv");
-    save << "sep=, \n";
-    save << P1.snome << "\n";
-    save << P1.sclasse << "\n";
-    save << P1.sraca << "\n";
-    save << P1.ifor << "\n";
-    save << P1.idex << "\n";
-    save << P1.isorte << "\n";
-    save << P1.ivida << "\n";
-    save << P1.idef << "\n";
-    save << P1.imagia<< "\n";
-    save << p << "\n" << q;
-    save.close();
-    cout << "Salvamento realizado com sucesso!!\n";
-    Sleep(2000);
-    system("cls");
-}
-
-void carregar(Personagem &P1, int &p, int &q){
-    save.open("save.csv");
-    string load;
-    getline(save, load);
-    getline(save, P1.snome);
-    getline(save, P1.sclasse);
-    getline(save, P1.sraca);
-    getline(save, load);
-    P1.ifor = atoi(load.c_str());
-    getline(save, load);
-    P1.idex = atoi(load.c_str());
-    getline(save, load);
-    P1.isorte = atoi(load.c_str());
-    getline(save, load);
-    P1.ivida = atoi(load.c_str());
-    getline(save, load);
-    P1.idef = atoi(load.c_str());
-    getline(save, load);
-    P1.imagia = atoi(load.c_str());
-    getline(save, load);
-    p = atoi(load.c_str());
-    getline(save, load);
-    q = atoi(load.c_str());
-    save.close();
-    cout << "Carregamento realizado com sucesso!!\n";
-    Sleep(2000);
-    system("cls");
-}
-
-void Menu(Personagem &P1){
-    Personagem P2;
-    Fase s[10][3];
-    int x = 0;
-    for(int i=0; i<10; i++){
-        for(int j=0; j<2; j++){
-            Fases(s[i][j], x);
-        }
-    }
-    int espera;
-    int voltar;
-    string desenhomenu[31][13];
-    for (int x = 0; x < 31;x++){
-        for (int y = 0; y < 13; y++){
-            if(x==10){
-                desenhomenu[x][1]="            Menu            ";
-                desenhomenu[x][3]="         1- Jogar           ";
-                desenhomenu[x][5]="         2- Status          ";
-                desenhomenu[x][7]="         3- Salvar          ";
-                desenhomenu[x][9]="         4- Carregar        ";
-                desenhomenu[x][11]="         5- Sair            ";
-            }else if (x==0||y==0||x==30||y==12){
-                desenhomenu[x][y]="#";
-            }
-            else if(y%2==0){
-                desenhomenu[x][y]="-";
-            }else if(y%2 == 0){
-                desenhomenu[x][y] = " ";
-            }
-        }
-    }
-    for (int y = 0; y < 13;y++){
-        for (int x = 0; x < 31; x++)
-        {
-              cout << desenhomenu[x][y];
-        }
-        cout<<endl;
-    }
-    cin>>espera;
-    system("cls");
-    switch(espera){
-    case 1:
-        if(c==0)
-        {
-            IniJogador(P1);
-        }
-        escrever(P1,s,p,q);
-        Menu(P1);
-        break;
-    case 2:
-        tela_status(P1);
-        cout << "Para voltar digite 1: ";
-        cin >> voltar;
-        system("cls");
-        Menu(P1);
-        break;
-    case 3:
-        cout << "Deseja salvar realmente? (1-sim / 2-nao) ";
-        cin >> escolha;
-        system("cls");
-        if(escolha == 1){
-            salvar(P1, p, q);
-        }
-        Menu(P1);
-        break;
-    case 4:
-        cout << "Deseja carregar um salvamento? (1-sim / 2-nao) ";
-        cin >> escolha;
-        system("cls");
-        if(escolha == 1){
-            carregar(P1, p, q);
-        }
-        c++;
-        Menu(P1);
-        break;
-    case 5:
-        break;
-
-    }
-}
-/*cout << "Deseja comecar um novo jogo? (1-Sim / 2-Nao) ";
-        cin >> escolha;
-        system("cls");
-        if(escolha == 2){
-            Menu(P1);
-        }
-        else{*/
-
-
-#endif // JOGO_H_INCLUDED

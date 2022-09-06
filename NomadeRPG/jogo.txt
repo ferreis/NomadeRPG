@@ -1,23 +1,87 @@
-Voce acorda em um lugar umido e lamacento, ainda atordoado, 
+Voce acorda em um lugar umido e lamacento, ainda atordoado,  
 olha para cima e ve dois sois no ceu alaranjado.
 
 =========================================================
-*        1-ficar deitado                                *
-*        2-levantar                                     *
+*        1-Ficar deitado                                *
+*        2-Levantar                                     *
 =========================================================
-Lentamente o sono bate, sem perceber voce dorme, 
-ouviu uma criatura rugir, esta de noite e nao consegue
-ver um palmo a sua frente.
-=========================================================
-*        1-Levanta rapidamente                          *
-*        2-Criar uma chama usando magia                 *
-=========================================================
-(MAGO)
 
+Levanta e olha para o ambiente em volta, arvores ciprestes, 
+eucaliptos e salgueiros uma parte do chao afundado em agua 
+lamacenta cheio de mosquito, com um zumbido em seus ouvidos, 
+os sois no topo do ceu e o alto teor de sal juntos fazem
+o seu ambiente muito quente, voce comeca a andar pelo terreno
+em sua volta, e escuta um som de agua corrente.
 =========================================================
-Consegue uma chama que ilumina tao bem quanto um tocha
-na palma da mão, mais infelizmente voce atrai a criatua para 
-sua direção e ela te ataca com um golpe mortal.(FiM)
+*        1-Seguir o som de agua corrente                *
+*        2-Continuar andando                            *
 =========================================================
-(NAO(MAGO))
+
+Voce segue o som da agua corrente ate achar um pequeno rio
+continua andado pela borda do rio para tentar achar sinal
+de civilizacao, voce ve um arbusto de frutinhas vermelhas.
+=========================================================
+*        1-Comer                                        *
+*        2-Guardar a frutinha                           *
+*        2-Continuar andando                            *
+=========================================================
+
+Apos tal, voce continua a andar ate ver ao longe uma pequena 
+cabana que aparenta estar abandonada, mas para chegar nela
+tera que nadar pelo rio, e do lado oposto voce ve no ceu um
+sinal de fumaca ao que parece ser fogo.
+=========================================================
+*        1-Cabana Abandonada                            *
+*        2-Sinal de fumaca                              *
+=========================================================
+
+Voce vai em direcao da cabana ate chegar na beira do rio 
+pelo visto sendo o unico caminho para cabana, 
+ou talvez seja melhor voltar e seguir o sinal de fumaca.
+=========================================================
+*        1-Nadar                                        *
+*        2-Sinal de fumaca                              *
+=========================================================
+
+Desafiando a correnteza voce nada ate o outro lado do rio 
+com muito dificudade, sabendo que nao sera mais possivel 
+voltar, vode entra na cabana, ela esta caindo aos pedacos
+e a madeira do chao range ao andar, possui um cama 
+de palha e uma lareira que talvez seja possivel usar.
+=========================================================
+*        1-Voltar, e ir para o sinal de fumaca          *
+*        2-Olhar em volta da casa                       *
+*        3-Descansar                                    *
+=========================================================
+
+Como o passar do tempo os sois começam a se por, voce acende 
+a lareira e deita na cama de palha... passa a noite 
+1
+Voce escuta o uivo de montros e abre os olhos rapidamente mas 
+antes de poder fazer qualquer coisa sente o sangue escorrendo do
+seu pescoço... Você morreu...
+2
+Voce escuta um passo pesado, voce rapidamente abre os olho e ve
+dois orcs, eles estão pronto para lutar contra você...
+3
+Passa a noite tranquilo, sem problema, ao acordar vai para 
+o lado de fora, e consegue ver ainda o sinal de fumaca no ceu...
+=========================================================
+*        1-Ir para o sinal de fumaca                    *
+*        2-Andar pelo pantano                           *
+=========================================================
+
+Voce anda aleatoriamente pelo pantano ate achar alguma coisa,
+sem reparar voce volta para a cabana
+=========================================================
+*        1-Ir para o sinal de fumaca                    *
+*        2-Andar pelo pantano                           *
+========================================================= 
+
+Seguindo o sinal de fumaca, anda por horas ate chegar aonde 
+esta o local de onde vem, voce ve uma vila recem saqueada
+aparentemente faz menos de uma semana, e parece estar vazia...
+=========================================================
+*        1-Descanar numa casa                           *
+*        2-Buscar a origem da fumaca                    *
 =========================================================

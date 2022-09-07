@@ -95,28 +95,28 @@ void IniJogador(Personagem &jogador){
    cin>>classe;
    switch (classe) {
       case 1:
-         jogador.ifor+=3;
+         jogador.ifor+=4;
          jogador.idex+=1;
          jogador.ivida+=3;
          jogador.idef+=2;
          jogador.sclasse = "Guerreiro";
          break;
       case 2:
-         jogador.ifor+=1;
+         jogador.ifor+=2;
          jogador.imagia+=5;
          jogador.idex+=1;
          jogador.ivida+=2;
          jogador.sclasse = "Mago";
          break;
       case 3:
-         jogador.ifor+=2;
+         jogador.ifor+=3;
          jogador.idex+=2;
          jogador.ivida+=2;
          jogador.isorte+=3;
          jogador.sclasse = "Ladino";
          break;
       default:
-         jogador.ifor+=2;
+         jogador.ifor+=3;
          jogador.idex+=2;
          jogador.ivida+=2;
          jogador.isorte+=2;
@@ -194,6 +194,16 @@ void escrever(int p, int q,int &escolha){
     system("cls");
 }
 
+int descansar(Personagem P1, int f){
+    int sorte = rand()%(3+P1.isorte);
+    if(sorte==0){
+        return 50;
+    }
+    else{
+        return f;
+    }
+}
+
 void Pantano(Personagem &P1, int &f){
     escrever(0, 7, escolha);
     if(escolha == 1){
@@ -267,12 +277,18 @@ void Cabana(Personagem &P1, int &f){
     }
     else if(escolha == 3 && chec[2] == 0){
         P1.ivida+=2;
-        chec[2]=1;
-
+        f=descansar(P1, f);
+        chec[2]= 1;
+    }
+    else if(escolha == 3 && chec[2] == 1){
+        cout << "Voce ja descansou!\n\n";
+        system("pause");
+        system ("cls");
     }
 }
 
 void Cidade(Personagem &P1, int &f){
+    escrever(77,84, escolha);
 
 }
 
@@ -352,9 +368,7 @@ void Fase(Personagem &P1,int &f){
 
     }
     else if(f == 50){
-        cout << "MORREU!!\n\n";
-        system("pause");
-        system("cls");
+        escrever(59,63, escolha);
     }
 }
 

@@ -1,0 +1,233 @@
+Voce acorda em um lugar umido e lamacento, ainda atordoado,  
+olha para cima e ve dois sois no ceu alaranjado.
+
+=========================================================
+*        1-Ficar deitado                                *
+*        2-Levantar                                     *
+=========================================================
+
+Levanta e olha para o ambiente em volta, arvores ciprestes, 
+eucaliptos e salgueiros uma parte do chao afundado em agua 
+lamacenta cheio de mosquito, com um zumbido em seus ouvidos, 
+os sois no topo do ceu e o alto teor de sal juntos fazem
+o seu ambiente muito quente, voce comeca a andar pelo terreno
+em sua volta, e escuta um som de agua corrente.
+=========================================================
+*        1-Seguir o som de agua corrente                *
+*        2-Continuar andando                            *
+=========================================================
+
+Voce segue o som da agua corrente ate achar um pequeno rio
+continua andado pela borda do rio para tentar achar sinal
+de civilizacao, voce ve um arbusto de frutinhas vermelhas.
+=========================================================
+*        1-Comer                                        *
+*        2-Guardar a frutinha                           *
+*        3-Continuar andando                            *
+=========================================================
+
+Apos tal, voce continua a andar ate ver ao longe uma pequena 
+cabana que aparenta estar abandonada, mas para chegar nela
+tera que nadar pelo rio, e do lado oposto voce ve no ceu um
+sinal de fumaca ao que parece ser fogo.
+=========================================================
+*        1-Cabana Abandonada                            *
+*        2-Sinal de fumaca                              *
+=========================================================
+
+Voce vai em direcao da cabana ate chegar na beira do rio 
+pelo visto sendo o unico caminho para cabana, 
+ou talvez seja melhor voltar e seguir o sinal de fumaca.
+=========================================================
+*        1-Nadar                                        *
+*        2-Sinal de fumaca                              *
+=========================================================
+
+Seguindo voce consegue chegar a uma cabana aparentemente
+velha, voce entra na cabana, ela esta caindo aos pedacos
+e a madeira do chao range ao andar, possui uma cama 
+de palha e uma lareira que talvez seja possivel usar.
+=========================================================
+*        1-Voltar, e ir para o sinal de fumaca          *
+*        2-Olhar em volta da casa                       *
+*        3-Descansar                                    *
+=========================================================
+
+Como o passar do tempo os sois começam a se por, voce acende 
+a lareira e deita na cama de palha... passa a noite 
+
+1
+Voce dorme e acorda ao escutar o uivo de montros, abre os
+olhos rapidamente mas antes de conseguir fazer qualquer coisa
+sente o sangue escorrendo do seu pescoco... Voce morreu...
+
+2
+Passa a noite tranquilo, sem problema, ao acordar vai para 
+o lado de fora, e consegue ver ainda o sinal de fumaca no ceu...
+
+=========================================================
+*        1-Ir para o sinal de fumaca                    *
+*        2-Andar pelo pantano                           *
+=========================================================
+
+Voce anda aleatoriamente pelo pantano ate achar alguma coisa,
+sem reparar voce volta para a cabana
+=========================================================
+*        1-Ir para o sinal de fumaca                    *
+*        2-Andar pelo pantano                           *
+========================================================= 
+
+Seguindo o sinal de fumaca, anda por horas ate chegar aonde 
+esta o local de onde vem, voce ve uma vila recem saqueada
+aparentemente faz menos de uma semana, e parece estar vazia...
+=========================================================
+*        1-Descanar numa casa                           *
+*        2-Buscar a origem da fumaca                    *
+=========================================================
+
+vai ate uma das casa da vila para descansar da viagem ate aqui
+você dormir numa cama confortavel sem problema... no dia seguinte
+voce vai ate a casa da onde venho a origim da fumança, e 
+não encontra nada, mas tem sinal que tinha alguem ali, 
+encrota um mapa no chao escrito "pedrao do ritual orc"
+estranamente esse nome isso parece familiar para voce
+=========================================================
+*        1-ir ate a pedra de sanque                     *
+*        2-viver na vila                                *
+=========================================================
+
+Ao chegar a origem da fumança e ve uma pessoa velha sem 
+usando os mesmo tipo de roupas que você que so que muito 
+mais velha e esfarrpada com uma mochila no lado, olhos 
+parecem vazio, ele ti olha e comeca a falar, ignorado sua
+existemcia.
+ =========================================================
+*        1-Escutar                                      *
+*        2-Atacar                                       *
+*        3-Ignorar                                      *                
+*        4-Perguntar                                    *
+=========================================================
+
+Voce tenta atacar a figura misteriosa, els consegui esquivar
+com facilidade.
+Misteriosa-"Que pena, essa impaciencia".
+Ele pega  as coisas dele rapidamente sem dar tempo de reação 
+e abre um pergaminho e some aos ventos, voce so  ver um papel
+no chao, ao olhar ver que e um mapa escrito "pedrao do ritual
+orc"
+=========================================================
+*        1-ir ate a pedra de sanque                     *
+*        2-viver na vila                                *
+=========================================================
+
+Voce tenta falar com o estranho, ele so te ignora e continua
+balbociado.
+ =========================================================
+*        1-Escutar                                      *
+*        2-Atacar                                       *
+*        3-Ignorar                                      *                
+*        4-Perguntar                                    *
+=========================================================
+
+Voce ignorar ele, ao ver que esta sendo ignorado o estranho
+se levanta e deixa um papel no chao, ao olhar o papel voce
+ver que e um mapa escrito "pedrao do ritual orc"
+=========================================================
+*        1-ir ate a pedra de sanque                     *
+*        2-viver na vila                                *
+=========================================================
+
+Voce senta e comeca a escutar o que o sere misterioso falar
+"A muito eles viviam na vila em paz com todos os outros
+a muito a paz se quebror por causa da perda do filho do 
+filho do esquecido, então antigo a prisionou o tempo, 
+o antigo apagou a memoria do filho do esquecido, as escolha
+sempre quebra, sempre repeti, qual perdao a furia, ou o mascrecre
+a escolha que vai quebra o tempo aprisionado..." ele começa a 
+para de falar e olha para voce, repirando profundamente
+e fala "o que tiver na quela mochila e sua por direito",
+ele tira o pergaminho do bolso abre e some com o ventos.
+voce repara no chao a um mapa escrito "Perdao do ritual orc".
+=========================================================
+*        1-ir ate a pedra de sanque                     *
+*        2-Pegar o que tiver na mochila                 *
+*        3-viver na vila                                *
+=========================================================
+
+Voce esta cansando dessa busca e escolhe viver em paz nessa
+vila, com os anos passando sozinho sente sua alma se esvaido
+de voce, assim voce desenha um mapa, sempre que voce anda por
+ai e acha item voce guarda em um mochila, a o repara um conto 
+sempre se repeti na sua cabeça - "A muito eles viviam na vila
+em paz com todos os outros a muito a paz se quebror por causa
+da perda do filho do filho do esquecido, então antigo a 
+prisionou o tempo, o antigo apagou a memoria do filho do
+esquecido, as escolha sempre quebra, sempre repeti, qual 
+perdao a furia, ou o mascrecre a escolha que vai quebra o 
+tempo aprisionado..."- com o passar dos anos voce se sento 
+completa mente vazio acha um pergaminho no chao escrito desintegrar,
+todas os dia voce vai ate um casa e liga uma foqueira, e comeca
+a falar o conto que esta na sua cabeça, ate que um dia alguem parece
+diante a voce, voce repeti o conto novamente, ai olha para ele e 
+fala "o que tiver na quela mochila e sua por direito", pega o pergaminho
+de desintegrar, e o ativa se desfazendo aos ventos.
+
+Voce anda ate a pedra do ritual orc quando chega ver uma perdra central 
+cheia de sangue e varias versoes de voce morto nessa pedra, então a memoria 
+que nunca a vinda se lembrado vem em sua mente, voce o filho do em deus esquecido
+um semi-deus, vivia em uma vila cheia de vida todas as raca em paz, voce tinha 
+um filho, mas um fatídico dia um voce ve um outro semi-deus e chefe dos orc Thrall 
+carregando o corpo do seu filho, sem saber o que tinha acontecido uma raiva o
+domina e voce atacar o orc sem nem perguntar, ele empunha seu machado voce 
+dois começa a um luta, essa batalha venho a destruir tudo que existia, os 
+deuses em furecido com o ato de destruir o mundo que eles criar os a prisionam 
+num mundo em que o tempo vem a se repetir, sem poderes, sem memoria,sem desejos
+esse era o castigo dos dois.
+=========================================================
+*        1-Perdoa os orcs                               *
+*        2-Lutar                                        *
+*        3-Esconderse                                   *
+=========================================================
+
+voce perdoa os orcs que acusava, voce se senti mais leve 
+todos os maus ficam para tras, ao longe observa uma aldeia
+que muitas vezes voce destruiu, voce se aproxima...
+uma vila de orc pequena todos te observa com medo, voce
+anda ate a residencia do orc e adentra ela, la sentado 
+num trono com um cara de abatido, ele olha para voce e fala 
+Thrall - "em fim, voce me matar aquele que um dia chamei de amigo"
+Voce - "Nao vim por sua cabaça thrall, vim para perdoar"
+Thrall - "O que vo-voce vai realmente m..., sendo assim
+tenho uma proposta,Uff..., vamos ate a pedra de sangue para 
+quebra a maldição do tempo, isso fara a dor sumir e o 
+tempo nao mais se repetir, voce aceita?"
+=========================================================
+*        1-Aceitar                                      *
+*        2-Recusar                                      *
+=========================================================
+
+o tempo passa o coração vivee, a alma se mantem e o corpo
+morrera mais vezes a escolha da recusa so fez o tempo se
+repeti, mais as memorias se mantem a força aumenta.
+=========================================================
+(Reseta o mundo e aumenta todos os status em +2)
+=========================================================
+
+Voce e thrall vao ate a pedra de sangue, todos os seus corpos
+em volta da pedra que vem a varias vezes a pinta a pedra de vermelho
+Thrall te olha com os olhos de confianca e comeca a falar
+Thrall - "Quando os sangue do filho do esquecido e o sangue 
+do filho do maldito, junto sangrar sobre o inicio e o fim
+o tempo a de libetalos os pais a de perdoalos assim com eles
+se perdoaram"
+Voce - "Serio... eles serio mais uma profecia com lição
+de morar por que eles sempre tem que ser pargrimatico, certo
+vamos fazer isso"
+voce e Thrall colcaram a mão em cima da pedra e furam a mao,
+o um do sois no desaparece do ceu, um forte terremoto, ate 
+que o som do silencio aparceu e por algums minutos, entao 
+os som de passarros que a muito nao ouvia, as numes que deixa
+os ceu cinza tambem a de sumir, entao a vila orc comemora
+Thrall - "Voce vem vivem conosco nessa nossa ultima vida mortal?"
+Voce -"Vou e hora de um descando mesmo"
+vive ate uma vida traquila e sem arrependimento na vila

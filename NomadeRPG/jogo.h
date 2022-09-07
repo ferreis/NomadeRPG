@@ -9,6 +9,7 @@
 
 using namespace std;
 
+
 ifstream salas, menu;
 fstream save;
 string line;
@@ -20,13 +21,14 @@ struct Personagem
    string snome;
    string sraca;
    string sclasse;
-   int ifor=0;
-   int idex=0;
-   int isorte=0;
-   int ivida=0;
-   int idef=0;
-   int imagia=0;
+   int ifor;
+   int idex;
+   int isorte;
+   int ivida;
+   int idef;
+   int imagia;
 };
+Personagem orc;
 //items
 struct Equipamento
 {
@@ -36,17 +38,25 @@ struct Equipamento
    int ipotion;
 };
 
-/*void Nomaderpg(){
-cout << "╔═╦╗────────────╔╗───╔═╗╔═╗╔══╗\n";
-cout << "║║║║╔═╗╔══╗╔═╗─╔╝║╔═╗║╬║║╬║║╔═╣\n";
-cout << "║║║║║╬║║║║║║╬╚╗║╬║║╩╣║╗╣║╔╝║╚╗║\n";
-cout << "╚╩═╝╚═╝╚╩╩╝╚══╝╚═╝╚═╝╚╩╝╚╝─╚══╝\n";
-cout << "───────────────────────────────\n";
-}*/
+void Nomaderpg(){
+    menu.open("nomade.txt");
+    while(menu.eof() == false)
+    {
+        getline(menu,line);
+        cout << line<< endl;
+    }
+    menu.close();
+}
  //função de inicialização do jogador
 void IniJogador(Personagem &jogador){
     int raca;
     int classe;
+    jogador.ifor=0;
+    jogador.idex=0;
+    jogador.isorte=0;
+    jogador.ivida=3;
+    jogador.idef=0;
+    jogador.imagia=0;
     cout << "CRIE SEU PERSONAGEM\n\nNome:";
     cin >> jogador.snome;
     system("cls");
@@ -85,21 +95,22 @@ void IniJogador(Personagem &jogador){
    cin>>classe;
    switch (classe) {
       case 1:
-         jogador.ifor+=5;
+         jogador.ifor+=3;
          jogador.idex+=1;
          jogador.ivida+=3;
          jogador.idef+=2;
          jogador.sclasse = "Guerreiro";
          break;
       case 2:
-         jogador.imagia+=7;
+         jogador.ifor+=1;
+         jogador.imagia+=5;
          jogador.idex+=1;
          jogador.ivida+=2;
          jogador.sclasse = "Mago";
          break;
       case 3:
-         jogador.ifor+=1;
-         jogador.idex+=4;
+         jogador.ifor+=2;
+         jogador.idex+=2;
          jogador.ivida+=2;
          jogador.isorte+=3;
          jogador.sclasse = "Ladino";
@@ -123,6 +134,51 @@ void tela_status(Personagem status){
     cout<<"----------------------------------------------------------------------------" << endl;
 }
 
+void batalha(Personagem &P1, int &f){
+    orc.idef = 1 + (rand()%3), orc.ifor = 1 + (rand()%3), orc.ivida = 4;
+    cout << "VOCE ENCONTROU UM ORC!!! PREPARE-SE PARA LUTAR\n\n";
+    system("pause");
+    system ("cls");
+    while(P1.ivida > 0 && orc.ivida > 0){
+        int ataqueP = P1.ifor + rand()%6;
+        int ataqueO = orc.ifor + rand()%6;
+        int defesaP = P1.idef + rand()%6;
+        int defesaO = orc.idef + rand()%6;
+        if(ataqueP > defesaO){
+            orc.ivida--;
+            cout << ataqueP << " - " << defesaO;
+            cout << "Seu ataque funcionou, vida do Orc: " << orc.ivida << "\n\n";
+            system("pause");
+            system ("cls");
+        }
+        else{
+                cout << ataqueP << " - " << defesaO;
+            cout << "Seu ataque falhou, vida do Orc: " << orc.ivida << "\n\n";
+            system("pause");
+            system ("cls");
+        }
+        if((ataqueO > defesaP) && orc.ivida > 0){
+            P1.ivida--;
+            cout << "Ataque do orc funcionou, sua vida: " << P1.ivida << "\n\n";
+            system("pause");
+            system ("cls");
+        }
+        else if((ataqueO < defesaP) && orc.ivida >0){
+            cout << "Ataque do orc falhou, sua vida: " << P1.ivida << "\n\n";
+            system("pause");
+            system ("cls");
+        }
+    }
+    if(P1.ivida == 0){
+        f=50;
+    }
+    if(orc.ivida == 0){
+        cout << "Voce ganhou a batalha!!\n\n";
+        system("pause");
+        system ("cls");
+    }
+}
+
 void escrever(int p, int q,int &escolha){
     salas.open("jogo.txt");
     for(int m=0; m<q; m++)
@@ -138,7 +194,7 @@ void escrever(int p, int q,int &escolha){
     system("cls");
 }
 
-    void Pantano(Personagem &P1, int &f){
+void Pantano(Personagem &P1, int &f){
     escrever(0, 7, escolha);
     if(escolha == 1){
         f=50;
@@ -197,14 +253,27 @@ void Rio(Personagem &P1, int &f){
     }
 }
 
-void Cabana(Personagem P1, int &f){
-    escrever(45, 55, escolha);
+void Cabana(Personagem &P1, int &f){
+    escrever(45, 54, escolha);
     if(escolha == 1){
         f=3;
     }
     else if(escolha == 2){
+        batalha(P1, f);
+        if(f==50){}
+        else{
+
+        }
+    }
+    else if(escolha == 3 && chec[2] == 0){
+        P1.ivida+=2;
+        chec[2]=1;
 
     }
+}
+
+void Cidade(Personagem &P1, int &f){
+
 }
 
 void salvar(Personagem P1, int p, int q, int chec[]){
@@ -276,7 +345,8 @@ void Fase(Personagem &P1,int &f){
         Fase(P1, f);
     }
     else if(f == 3){
-
+        Cidade(P1, f);
+        Fase(P1, f);
     }
     else if(f == 4){
 
@@ -289,10 +359,10 @@ void Fase(Personagem &P1,int &f){
 }
 
 void Menu(Personagem &P1, int &f){
-    Personagem P2;
     srand(time(NULL));
     int espera;
     int voltar;
+    Nomaderpg();
     menu.open("menu.txt");
     while(menu.eof() == false)
     {
@@ -304,8 +374,9 @@ void Menu(Personagem &P1, int &f){
     system("cls");
     switch(espera){
     case 1:
-        if(c==0)
+        if(c==0 || f==50)
         {
+            f=0;
             IniJogador(P1);
             for(int i; i<30; i++)
             {
@@ -358,73 +429,4 @@ void Menu(Personagem &P1, int &f){
 
     }
 }
-/*cout << "Deseja comecar um novo jogo? (1-Sim / 2-Nao) ";
-        cin >> escolha;
-        system("cls");
-        if(escolha == 2){
-            Menu(P1);
-        }
-        else{*/
-
-
 #endif // JOGO_H_INCLUDED
-/*
-    string desenhomenu[31][13];
-    for (int x = 0; x < 31;x++){
-        for (int y = 0; y < 13; y++){
-            if(x==10){
-                desenhomenu[x][1]="            Menu            ";
-                desenhomenu[x][3]="         1- Jogar           ";
-                desenhomenu[x][5]="         2- Status          "    ;
-                desenhomenu[x][7]="         3- Salvar          ";
-                desenhomenu[x][9]="         4- Carregar        ";
-                desenhomenu[x][11]="         5- Sair            ";
-            }else if (x==0||y==0||x==30||y==12){
-                desenhomenu[x][y]="#";
-            }
-            else if(y%2==0){
-                desenhomenu[x][y]="-";
-            }else if(y%2 == 0){
-                desenhomenu[x][y] = " ";
-            }
-        }
-    }
-    for (int y = 0; y < 13;y++){
-        for (int x = 0; x < 31; x++)
-        {
-              cout << desenhomenu[x][y];
-        }
-        cout<<endl;
-    }
-
-    if(q==0){
-        switch(escolha){
-        case 1:
-            q++;
-            escrever(P1,s,p,q);
-            break;
-        case 2:
-            q+=2;
-            escrever(P1,s,p,q);
-            break;
-        case 3:
-            break;
-        }
-    }
-    else{
-        switch(escolha){
-        case 1:
-            q=0;
-            p++;
-            escrever(P1,s,p,q);
-            break;
-        case 2:
-            q=0;
-            p+=2;
-            escrever(P1,s,p,q);
-            break;
-        case 3:
-            break;
-        }
-    }*/
-

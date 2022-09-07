@@ -18,12 +18,22 @@ struct Personagem
    string snome;
    string sraca;
    string sclasse;
+<<<<<<< Updated upstream
    int ifor=0;
    int idex=0;
    int isorte=0;
    int ivida=0;
    int idef=0;
    int imagia=0;
+=======
+   int ifor;
+   int idex;
+   int isorte;
+   int ivida;
+   int vidatual;
+   int idef;
+   int imagia;
+>>>>>>> Stashed changes
 };
 //items
 struct Equipamento
@@ -120,6 +130,7 @@ void IniJogador(Personagem &jogador){
          jogador.sclasse = "Aldeao";
          break;
    }
+   jogador.vidatual=jogador.ivida
    system("cls");
 }
 void tela_status(Personagem status){
@@ -130,7 +141,75 @@ void tela_status(Personagem status){
     cout<<"----------------------------------------------------------------------------" << endl;
 }
 
+<<<<<<< Updated upstream
 void escrever(Personagem &P1, Fase s[][3],int &p, int &q){
+=======
+void batalha(Personagem &P1, int &f){
+    orc.idef = 1 + (rand()%3), orc.ifor = 1 + (rand()%3), orc.ivida = 4;
+    cout << "VOCE ENCONTROU UM ORC!!! PREPARE-SE PARA LUTAR\n\n";
+    system("pause");
+    system ("cls");]
+    int turno = 0;
+    while(P1.ivida > 0 && orc.ivida > 0){
+        int ataqueP = P1.ifor + rand()%6;
+        int ataqueO = orc.ifor + rand()%6;
+        int defesaP = P1.idef + rand()%6;
+        int defesaO = orc.idef + rand()%6;
+
+        }
+        if(ataqueP > defesaO){
+            orc.ivida--;
+            cout << ataqueP << " - " << defesaO;
+            cout << "Seu ataque funcionou, vida do Orc: " << orc.ivida << "\n\n";
+            system("pause");
+            system ("cls");
+        }
+        else{
+            cout << ataqueP << " - " << defesaO;
+            cout << "Seu ataque falhou, vida do Orc: " << orc.ivida << "\n\n";
+            system("pause");
+            system ("cls");
+        }
+        if((ataqueO > defesaP) && orc.ivida > 0){
+            P1.ivida--;
+            cout << "Ataque do orc funcionou, sua vida: " << P1.ivida << "\n\n";
+            system("pause");
+            system ("cls");
+        }
+        else if((ataqueO < defesaP) && orc.ivida >0){
+            cout << "Ataque do orc falhou, sua vida: " << P1.ivida << "\n\n";
+            system("pause");
+            system ("cls");
+        }
+    }
+    if(P1.ivida == 0){
+        f=50;
+    }
+    if(orc.ivida == 0){
+        cout << "Voce ganhou a batalha!!\n\n";
+        system("pause");
+        system ("cls");
+    }
+}
+void emboscada(Personagem &jogador){
+    if(jogador.sraca == "Halfling"||jogador.sraca == "Anao"){
+        jogador.idex+=1;
+    }
+    if(jogador.sclasse=="Ladino"){
+        jogador.idex+=2;
+    }
+    if(jogador.idex<=rand()%11){
+        jogador.ifor+=3;
+        cout << jogador.ifor<< endl;
+        batalha();
+        jogador.ifor-=3;
+        cout << jogador.ifor<< endl;
+    }else{
+    batalha();
+    }
+}
+void escrever(int p, int q,int &escolha){
+>>>>>>> Stashed changes
     salas.open("jogo.txt");
     for(int m=0; m<(s[p][q].F); m++)
     {

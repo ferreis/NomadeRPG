@@ -161,13 +161,12 @@ void batalha(Personagem &P1, int &f, bool vantagem=false){
     system ("cls");]
     int turno = 0;
     while(P1.ivida > 0 && orc.ivida > 0){
-<<<<<<< Updated upstream
+
         int ataqueP = P1.ifor + rand()%6;
         int ataqueO = orc.ifor + rand()%6;
         int defesaP = P1.idef + rand()%6;
         int defesaO = orc.idef + rand()%6;
 
-=======
         int turno = 0;
             int ataqueP = P1.ifor + rand()%6;
             int ataqueO = orc.ifor + rand()%6;
@@ -179,7 +178,6 @@ void batalha(Personagem &P1, int &f, bool vantagem=false){
             turno++;
         }else{
             turno++;
->>>>>>> Stashed changes
         }
         if(ataqueP > defesaO){
             orc.ivida--;
@@ -216,7 +214,6 @@ void batalha(Personagem &P1, int &f, bool vantagem=false){
     }
 }
 void emboscada(Personagem &jogador){
-<<<<<<< Updated upstream
     if(jogador.sraca == "Halfling"||jogador.sraca == "Anao"){
         jogador.idex+=1;
     }
@@ -233,7 +230,6 @@ void emboscada(Personagem &jogador){
     batalha();
     }
 }
-=======
     if(jogador.sraca =="Halfling"|| jogador.sraca=="Anao"){
             cout<<jogador.idex<<endl;
         if(jogador.sclasse == "Ladino"){
@@ -260,10 +256,7 @@ void emboscada(Personagem &jogador){
         }
     }
 }
-
->>>>>>> Stashed changes
 void escrever(int p, int q,int &escolha){
->>>>>>> Stashed changes
     salas.open("jogo.txt");
     for(int m=0; m<(s[p][q].F); m++)
     {
@@ -436,13 +429,4 @@ void Menu(Personagem &P1){
 
     }
 }
-/*cout << "Deseja comecar um novo jogo? (1-Sim / 2-Nao) ";
-        cin >> escolha;
-        system("cls");
-        if(escolha == 2){
-            Menu(P1);
-        }
-        else{*/
-
-
 #endif // JOGO_H_INCLUDED

@@ -18,6 +18,7 @@ struct Personagem
    string snome;
    string sraca;
    string sclasse;
+<<<<<<< Updated upstream
    int ifor=0;
    int idex=0;
    int isorte=0;
@@ -26,6 +27,15 @@ struct Personagem
    int imagia=0;
    int vidatual;
 
+=======
+   int ifor;
+   int idex;
+   int isorte;
+   int ivida;
+   int idef;
+   int imagia;
+   int ividatual;
+>>>>>>> Stashed changes
 };
 //items
 struct Equipamento
@@ -122,7 +132,11 @@ void IniJogador(Personagem &jogador){
          jogador.sclasse = "Aldeao";
          break;
    }
+<<<<<<< Updated upstream
    jogador.vidatual=jogador.ivida;
+=======
+   jogador.ividatual=jogador.ivida;
+>>>>>>> Stashed changes
    system("cls");
 }
 void tela_status(Personagem status){
@@ -134,20 +148,38 @@ void tela_status(Personagem status){
 }
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 void escrever(Personagem &P1, Fase s[][3],int &p, int &q){
 =======
 void batalha(Personagem &P1, int &f){
+=======
+void batalha(Personagem &P1, int &f, bool vantagem=false){
+>>>>>>> Stashed changes
     orc.idef = 1 + (rand()%3), orc.ifor = 1 + (rand()%3), orc.ivida = 4;
     cout << "VOCE ENCONTROU UM ORC!!! PREPARE-SE PARA LUTAR\n\n";
     system("pause");
     system ("cls");]
     int turno = 0;
     while(P1.ivida > 0 && orc.ivida > 0){
+<<<<<<< Updated upstream
         int ataqueP = P1.ifor + rand()%6;
         int ataqueO = orc.ifor + rand()%6;
         int defesaP = P1.idef + rand()%6;
         int defesaO = orc.idef + rand()%6;
 
+=======
+        int turno = 0;
+            int ataqueP = P1.ifor + rand()%6;
+            int ataqueO = orc.ifor + rand()%6;
+            int defesaP = P1.idef + rand()%6;
+            int defesaO = orc.idef + rand()%6;
+        if(turno==0 && vantagem==true){
+            ataqueP += 6;
+            defesaP += 6;
+            turno++;
+        }else{
+            turno++;
+>>>>>>> Stashed changes
         }
         if(ataqueP > defesaO){
             orc.ivida--;
@@ -184,6 +216,7 @@ void batalha(Personagem &P1, int &f){
     }
 }
 void emboscada(Personagem &jogador){
+<<<<<<< Updated upstream
     if(jogador.sraca == "Halfling"||jogador.sraca == "Anao"){
         jogador.idex+=1;
     }
@@ -200,6 +233,35 @@ void emboscada(Personagem &jogador){
     batalha();
     }
 }
+=======
+    if(jogador.sraca =="Halfling"|| jogador.sraca=="Anao"){
+            cout<<jogador.idex<<endl;
+        if(jogador.sclasse == "Ladino"){
+            jogador.idex+=3;
+            cout<<jogador.idex<<endl;
+        }else{
+            cout<<jogador.idex<<endl;
+        jogador.idex+=1;
+        }
+    }
+    if(jogador.idex<=rand()%11){
+        batalha(jogador, f, true);
+    }else{
+        batalha(jogador, f);
+    }
+    if(jogador.sraca =="Halfling"|| jogador.sraca=="Anao"){
+        cout<<jogador.idex<<endl;
+        if(jogador.sclasse == "Ladino"){
+            cout<<jogador.idex<<endl;
+            jogador.idex-=3;
+        }else{
+            cout<<jogador.idex<<endl;
+        jogador.idex-=1;
+        }
+    }
+}
+
+>>>>>>> Stashed changes
 void escrever(int p, int q,int &escolha){
 >>>>>>> Stashed changes
     salas.open("jogo.txt");

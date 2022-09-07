@@ -18,22 +18,14 @@ struct Personagem
    string snome;
    string sraca;
    string sclasse;
-<<<<<<< Updated upstream
    int ifor=0;
    int idex=0;
    int isorte=0;
    int ivida=0;
    int idef=0;
    int imagia=0;
-=======
-   int ifor;
-   int idex;
-   int isorte;
-   int ivida;
    int vidatual;
-   int idef;
-   int imagia;
->>>>>>> Stashed changes
+
 };
 //items
 struct Equipamento
@@ -130,7 +122,7 @@ void IniJogador(Personagem &jogador){
          jogador.sclasse = "Aldeao";
          break;
    }
-   jogador.vidatual=jogador.ivida
+   jogador.vidatual=jogador.ivida;
    system("cls");
 }
 void tela_status(Personagem status){

@@ -234,3 +234,60 @@ Thrall - "Voce vem vivem conosco nessa nossa ultima vida mortal?"
 Voce -"Vou e hora de um descando mesmo"
 vive ate uma vida traquila e sem arrependimento na vila
 
+Batalha chefe dos orc
+em raivecido pelos acontencimento esquecido voce parte para 
+o ataque,
+
+quando começa o ataque aos orcs, Thrall o lider deles 
+aparece e o empedir de continuar se preparado para luta
+
+Thrall - Morte te acompanha mais uma vez, velho amigo.
+
+voce ganha do chefe orc, o corpo dele jogado ao chao, 
+voce ve todos os orc da vila se tranformar em pessoas 
+de diversas raca, eles te seguem, voce recriar a vila
+ja destruida, ate que um jovem guerreiro orc vem te 
+desafiar e voce sabe o pq eles estar ali...[fim]
+
+voce se esconde se esqueirado ate a vila orc
+1
+sabendo que seu sangue que possui veneno para os orc, 
+2 
+Sabendo que talvez a fruta que voce tinha pego possa ser 
+venenosa,
+1 e 2
+vai ate a fonte de aqua e comida deles e os envenena,
+esperado que uma parte deles comeram. 
+3
+o chefe orc o ve se esqueirado e preparado
+para batalha
+
+Voce olhar em volta da casa, ve ums orc patrulhado ali
+=========================================================
+*        1-Atacar                                       *
+*        2-Emboscar                                     *
+*        3-Correr                                       *
+=========================================================
+
+[Falha em Emboscar]
+Voce tenta Emboscar infelimente falhado, ele vem voce se
+escondendo, e preparam para batalha, parace que agora nao
+e mais possivel fugir.
+
+[Sucesso em Emboscar]
+Voce consegue se esconder entre as arvores, prepara um 
+ataque surpressa.
+
+[Correr]
+Voce correr o mais rapido que suas perna permite dai 
+
+[Corre se Ladino]
+Voce ve um esconderijo muito bem preparado em quanto 
+esta correndo, entra nele e ve varias graveta e armadario
+ate um bau.
+
+[Esconderijo se anao]
+Entre os armario voce ve uma pedra facimente identificavel
+e aperta ela, voce e um nova sala se abrindo com um cofre 
+aberto.
+

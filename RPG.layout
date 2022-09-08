@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<FileVersion major="1" minor="0" />
+	<ActiveTarget name="Debug" />
+	<File name="main.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="196" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="jogo.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="2" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="8065" topLine="44" />
+		</Cursor>
+		<Folding>
+			<Collapse line="20" />
+			<Collapse line="34" />
+			<Collapse line="51" />
+			<Collapse line="130" />
+			<Collapse line="138" />
+			<Collapse line="187" />
+			<Collapse line="209" />
+			<Collapse line="228" />
+			<Collapse line="241" />
+			<Collapse line="257" />
+			<Collapse line="300" />
+			<Collapse line="334" />
+			<Collapse line="378" />
+			<Collapse line="391" />
+			<Collapse line="414" />
+			<Collapse line="445" />
+			<Collapse line="488" />
+		</Folding>
+	</File>
+</CodeBlocks_layout_file>

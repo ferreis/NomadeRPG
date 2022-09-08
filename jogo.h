@@ -186,11 +186,12 @@ void batalha(Personagem &P1, int &f, bool vantagem=false){
 }
 
 void emboscada(Personagem &jogador,int &f){
-    if(jogador.sraca =="Halfling" || jogador.sraca=="Anao"){
+    int teste = jogador.idex;
+    if(jogador.sraca == "Halfling" || jogador.sraca== "Anao"){
         if(jogador.sclasse == "Ladino"){
-            jogador.idex+=3;
+            jogador.idex = jogador.idex+3;
         }else{
-            jogador.idex+=1;
+            jogador.idex=jogador.idex+1;
         }
     }
     if(jogador.idex<=rand()%11){
@@ -200,9 +201,9 @@ void emboscada(Personagem &jogador,int &f){
     }
     if(jogador.sraca =="Halfling" || jogador.sraca=="Anao"){
         if(jogador.sclasse == "Ladino"){
-            jogador.idex-=3;
+            jogador.idex=jogador.idex-3;
         }else{
-            jogador.idex-=1;
+            jogador.idex=jogador.idex-1;
         }
     }
 }
@@ -226,7 +227,7 @@ int escrever(int p, int q,int escolha=0){
 
 }
 
-int descansar(Personagem P1, int f){
+int descansar(Personagem &P1, int f){
     int sorte = rand()%(3+P1.isorte);
     if(sorte==0){
         return 50;
@@ -300,7 +301,6 @@ void Rio(Personagem &P1, int &f){
 
 void Encontro(Personagem &P1,int &f){
     escrever(251,257);
-    cin >> escolha;
     if(escolha == 1){
         batalha(P1, f);
     }else if(escolha == 2){
@@ -308,7 +308,6 @@ void Encontro(Personagem &P1,int &f){
     }else if(escolha == 3){
        //correr();
     }
-    system("pause");
 }
 
 void Cabana(Personagem &P1, int &f){
@@ -316,8 +315,10 @@ void Cabana(Personagem &P1, int &f){
     if(escolha == 1){
         f=3;
     }
-    else if(escolha == 2){
+    else if(escolha == 2&& chec[2] == 0){
         Encontro(P1, f);
+
+    }else if(escolha == 2&& chec[2] == 0){
 
     }
     else if(escolha == 3 && chec[2] == 0){

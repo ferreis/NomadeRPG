@@ -134,16 +134,24 @@ void tela_status(Personagem status){
     cout<<"----------------------------------------------------------------------------" << endl;
 }
 
-void batalha(Personagem &P1, int &f){
+void batalha(Personagem &P1, int &f, bool vantagem=false){
     orc.idef = 1 + (rand()%3), orc.ifor = 1 + (rand()%3), orc.ivida = 4;
     cout << "VOCE ENCONTROU UM ORC!!! PREPARE-SE PARA LUTAR\n\n";
     system("pause");
     system ("cls");
+    int turno=0
     while(P1.ivida > 0 && orc.ivida > 0){
         int ataqueP = P1.ifor + rand()%6;
         int ataqueO = orc.ifor + rand()%6;
         int defesaP = P1.idef + rand()%6;
         int defesaO = orc.idef + rand()%6;
+        if(turno==0 && vantagem==true){
+            ataqueP += 6;
+            defesaP += 6;
+            turno++;
+        }else{
+            turno++;
+        }
         if(ataqueP > defesaO){
             orc.ivida--;
             cout << ataqueP << " - " << defesaO;
@@ -178,7 +186,33 @@ void batalha(Personagem &P1, int &f){
         system ("cls");
     }
 }
-
+void emboscada(Personagem &jogador){
+    if(jogador.sraca =="Halfling" jogador.sraca=="Anao"){
+            cout<<jogador.idex<<endl;
+        if(jogador.sclasse == "Ladino"){
+            jogador.idex+=3;
+            cout<<jogador.idex<<endl;
+        }else{
+            cout<<jogador.idex<<endl;
+        jogador.idex+=1;
+        }
+    }
+    if(jogador.idex<=rand()%11){
+        batalha(jogador, f, true);
+    }else{
+        batalha(jogador, f);
+    }
+    if(jogador.sraca =="Halfling" jogador.sraca=="Anao"){
+        cout<<jogador.idex<<endl;
+        if(jogador.sclasse == "Ladino"){
+            cout<<jogador.idex<<endl;
+            jogador.idex-=3;
+        }else{
+            cout<<jogador.idex<<endl;
+        jogador.idex-=1;
+        }
+    }
+}
 int escrever(int p, int q,int escolha=0){
     salas.open("jogo.txt");
     for(int m=0; m<q; m++)

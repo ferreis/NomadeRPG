@@ -14,8 +14,9 @@ ifstream salas, menu;
 fstream save;
 string line;
 bool fruit;
+//Bahia o que é p? q? c? f?, pelo amor de deus ta foda
 int escolha, p = 0, q = 0, c=0, f=0, chec[30], *v[30];
- //atributos do jogador
+//atributos do jogador
 struct Personagem
 {
    string snome;
@@ -43,7 +44,7 @@ void Nomaderpg(){
     while(menu.eof() == false)
     {
         getline(menu,line);
-        cout << line<< endl;
+        cout << line << endl;
     }
     menu.close();
 }
@@ -126,6 +127,7 @@ void IniJogador(Personagem &jogador){
    }
    system("cls");
 }
+
 void tela_status(Personagem status){
     cout<<"----------------------------------------------------------------------------"<<endl;
     cout<<"|Nome: "<< status.snome<< "   |Classe: "<< status.sclasse<<"   |Raca: "<< status.sraca<<"| \n";
@@ -136,10 +138,8 @@ void tela_status(Personagem status){
 
 void batalha(Personagem &P1, int &f, bool vantagem=false){
     orc.idef = 1 + (rand()%3), orc.ifor = 1 + (rand()%3), orc.ivida = 4;
-    cout << "VOCE ENCONTROU UM ORC!!! PREPARE-SE PARA LUTAR\n\n";
-    system("pause");
     system ("cls");
-    int turno=0
+    int turno=0;
     while(P1.ivida > 0 && orc.ivida > 0){
         int ataqueP = P1.ifor + rand()%6;
         int ataqueO = orc.ifor + rand()%6;
@@ -148,9 +148,6 @@ void batalha(Personagem &P1, int &f, bool vantagem=false){
         if(turno==0 && vantagem==true){
             ataqueP += 6;
             defesaP += 6;
-            turno++;
-        }else{
-            turno++;
         }
         if(ataqueP > defesaO){
             orc.ivida--;
@@ -160,7 +157,7 @@ void batalha(Personagem &P1, int &f, bool vantagem=false){
             system ("cls");
         }
         else{
-                cout << ataqueP << " - " << defesaO;
+            cout << ataqueP << " - " << defesaO;
             cout << "Seu ataque falhou, vida do Orc: " << orc.ivida << "\n\n";
             system("pause");
             system ("cls");
@@ -176,6 +173,7 @@ void batalha(Personagem &P1, int &f, bool vantagem=false){
             system("pause");
             system ("cls");
         }
+        turno++;
     }
     if(P1.ivida == 0){
         f=50;
@@ -186,15 +184,13 @@ void batalha(Personagem &P1, int &f, bool vantagem=false){
         system ("cls");
     }
 }
-void emboscada(Personagem &jogador){
-    if(jogador.sraca =="Halfling" jogador.sraca=="Anao"){
-            cout<<jogador.idex<<endl;
+
+void emboscada(Personagem &jogador,int &f){
+    if(jogador.sraca =="Halfling" || jogador.sraca=="Anao"){
         if(jogador.sclasse == "Ladino"){
             jogador.idex+=3;
-            cout<<jogador.idex<<endl;
         }else{
-            cout<<jogador.idex<<endl;
-        jogador.idex+=1;
+            jogador.idex+=1;
         }
     }
     if(jogador.idex<=rand()%11){
@@ -202,17 +198,15 @@ void emboscada(Personagem &jogador){
     }else{
         batalha(jogador, f);
     }
-    if(jogador.sraca =="Halfling" jogador.sraca=="Anao"){
-        cout<<jogador.idex<<endl;
+    if(jogador.sraca =="Halfling" || jogador.sraca=="Anao"){
         if(jogador.sclasse == "Ladino"){
-            cout<<jogador.idex<<endl;
             jogador.idex-=3;
         }else{
-            cout<<jogador.idex<<endl;
-        jogador.idex-=1;
+            jogador.idex-=1;
         }
     }
 }
+
 int escrever(int p, int q,int escolha=0){
     salas.open("jogo.txt");
     for(int m=0; m<q; m++)
@@ -304,17 +298,27 @@ void Rio(Personagem &P1, int &f){
     }
 }
 
+void Encontro(Personagem &P1,int &f){
+    escrever(251,257);
+    cin >> escolha;
+    if(escolha == 1){
+        batalha(P1, f);
+    }else if(escolha == 2){
+        emboscada(P1, f);
+    }else if(escolha == 3){
+       //correr();
+    }
+    system("pause");
+}
+
 void Cabana(Personagem &P1, int &f){
     escolha = escrever(45, 55);
     if(escolha == 1){
         f=3;
     }
     else if(escolha == 2){
-        batalha(P1, f);
-        if(f==50){}
-        else{
+        Encontro(P1, f);
 
-        }
     }
     else if(escolha == 3 && chec[2] == 0){
         P1.ivida+=2;

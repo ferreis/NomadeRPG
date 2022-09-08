@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1662607490 source:c:\users\rafa_\documents\nomaderpg\main.cpp
+	<iostream>
+	"jogo.h"
+
+1662610930 c:\users\rafa_\documents\nomaderpg\jogo.h
+	<iostream>
+	<stdlib.h>
+	<fstream>
+	<windows.h>
+	<time.h>
+

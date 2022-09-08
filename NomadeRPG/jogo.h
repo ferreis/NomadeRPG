@@ -57,11 +57,11 @@ void IniJogador(Personagem &jogador){
     jogador.ivida=3;
     jogador.idef=0;
     jogador.imagia=0;
-    cout << "CRIE SEU PERSONAGEM\n\nNome:";
+    cout << "CRIE SEU PERSONAGEM\n\nNome: ";
     cin >> jogador.snome;
     system("cls");
     //Nomaderpg();
-    cout << "Escolha a sua Raca: \n 1) Anao \n 2) Elfo \n 3) Halfling\n\nEscolha : \n";
+    cout << "Escolha a sua Raca: \n 1) Anao \n 2) Elfo \n 3) Halfling\n\nEscolha : ";
     cin >> raca;
     system("cls");
     //Nomaderpg();
@@ -69,7 +69,7 @@ void IniJogador(Personagem &jogador){
         cout << "Opcao inexistente, tente novamente:\n";
         cin >> raca;
         system("cls");
-        cout << "Escolha a sua Raca: \n 1) Anao \n 2) Elfo \n 3) Halfling\n\nEscolha : \n";
+        cout << "Escolha a sua Raca: \n 1) Anao \n 2) Elfo \n 3) Halfling\n\nEscolha : ";
     }
     switch(raca){
     case 1:
@@ -91,7 +91,7 @@ void IniJogador(Personagem &jogador){
    }
    system("cls");
    //Nomaderpg();
-   cout << "Escolha a Classe: \n 1) Guerreiro \n 2) Mago \n 3) Ladino \n\nEscolha : \n";
+   cout << "Escolha a Classe: \n 1) Guerreiro \n 2) Mago \n 3) Ladino \n\nEscolha : ";
    cin>>classe;
    switch (classe) {
       case 1:
@@ -179,7 +179,7 @@ void batalha(Personagem &P1, int &f){
     }
 }
 
-void escrever(int p, int q,int &escolha){
+int escrever(int p, int q,int escolha=0){
     salas.open("jogo.txt");
     for(int m=0; m<q; m++)
     {
@@ -189,9 +189,13 @@ void escrever(int p, int q,int &escolha){
         }
     }
     salas.close();
-    cout << "Escolha (Menu:5) : ";
-    cin >> escolha;
-    system("cls");
+    if(escolha!= 1){
+        cout << "Escolha (Menu:5) : ";
+        cin >> escolha;
+        system("cls");
+        return escolha;
+    }
+
 }
 
 int descansar(Personagem P1, int f){
@@ -200,17 +204,20 @@ int descansar(Personagem P1, int f){
         return 50;
     }
     else{
+        cout << "Descansa tranquilamente, e recupera sua vida perdida...\n\n";
+        system("pause");
+        system("cls");
         return f;
     }
 }
 
 void Pantano(Personagem &P1, int &f){
-    escrever(0, 7, escolha);
+    escolha = escrever(0, 8);
     if(escolha == 1){
         f=50;
     }
     else if(escolha == 2){
-        escrever(8, 18, escolha);
+        escolha = escrever(8, 19);
         if(escolha == 1){
             f=1;
         }
@@ -222,7 +229,7 @@ void Pantano(Personagem &P1, int &f){
 
 void Rio(Personagem &P1, int &f){
     if(chec[1]==0){
-        escrever(19, 27, escolha);
+        escolha = escrever(19, 28);
         if(escolha == 1){
             if(P1.sraca != "Halfling")
             {
@@ -246,9 +253,9 @@ void Rio(Personagem &P1, int &f){
         }
         chec[1]=1;
     }
-    escrever(28, 36, escolha);
+    escolha = escrever(28, 37);
     if(escolha == 1){
-        escrever(37,44, escolha);
+        escolha = escrever(37,44);
         if(escolha == 1){
             if(P1.sraca == "Anao"){
                 f=50;
@@ -259,12 +266,12 @@ void Rio(Personagem &P1, int &f){
         }
     }
     else if(escolha == 2){
-        f=0;
+        f=3;
     }
 }
 
 void Cabana(Personagem &P1, int &f){
-    escrever(45, 54, escolha);
+    escolha = escrever(45, 55);
     if(escolha == 1){
         f=3;
     }
@@ -288,8 +295,60 @@ void Cabana(Personagem &P1, int &f){
 }
 
 void Cidade(Personagem &P1, int &f){
-    escrever(77,84, escolha);
+    escolha = escrever(66,74);
+    if(escolha == 1){
+        P1.ivida++;
+        escolha = escrever(74,85);
+        if(escolha == 1){
+            f=8;
+        }
+        else if(escolha == 2){
+            escrever(144,161,1);
+            system("pause");
+            system("cls");
+            f=40;
+        }
+    }
+    else if(escolha == 2){
+        escolha = escrever(85,97);
+        if(escolha == 1){
+            escolha = escrever(127,144);
+            if(escolha == 1){
+                f=8;
+            }
+            else if(escolha == 2 && chec[3]==0){
+                P1.ifor++;
+                chec[3] = 1;
+            }
+            else if(escolha == 2 && chec[3]==1){
+                cout << "Você ja pegou tudo da mochila!!\n\n";
+                system("pause");
+                system("cls");
+            }
+        }
+        else if(escolha == 2){
 
+        }
+        else if(escolha == 3){
+
+        }
+        else if(escolha == 4){
+
+        }
+    }
+}
+
+void PedraOrc(Personagem &P1, int &f){
+    escrever(161,178);
+    if(escolha == 1){
+        escrever(178,195);
+        if(escolha == 1){
+            escrever(202,222,1);
+            system("pause");
+            system("cls");
+            f=40;
+        }
+    }
 }
 
 void salvar(Personagem P1, int p, int q, int chec[]){
@@ -367,8 +426,25 @@ void Fase(Personagem &P1,int &f){
     else if(f == 4){
 
     }
+    else if(f == 8){
+        PedraOrc(P1, f);
+        Fase(P1, f);
+    }
+    else if(f == 40){
+        menu.open("fim.txt");
+        while(menu.eof() == false)
+        {
+            getline(menu,line);
+            cout << line<< endl;
+        }
+        menu.close();
+    }
     else if(f == 50){
-        escrever(59,63, escolha);
+        escrever(59,63,1);
+        system("pause");
+        system("cls");
+        f=40;
+        Fase(P1,f);
     }
 }
 
@@ -388,7 +464,7 @@ void Menu(Personagem &P1, int &f){
     system("cls");
     switch(espera){
     case 1:
-        if(c==0 || f==50)
+        if(c==0 || f==40)
         {
             f=0;
             IniJogador(P1);

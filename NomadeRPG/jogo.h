@@ -520,7 +520,7 @@ void PedraOrc(Personagem &P1, int &f){
 }
 
 
-void salvar(Personagem P1, int f, int chec[]){
+void salvar(Personagem P1, int f, int chec[], int fruit){
     save.open("save.csv");
     save << "sep=, \n";
     save << P1.snome << "\n";
@@ -533,6 +533,7 @@ void salvar(Personagem P1, int f, int chec[]){
     save << P1.idef << "\n";
     save << P1.imagia<< "\n";
     save << f << "\n";
+    save << fruit << "\n";
     for(int i=0; i<4; i++)
     {
         save << chec[i] << "\n";
@@ -543,9 +544,10 @@ void salvar(Personagem P1, int f, int chec[]){
     system("cls");
 }
 
-void carregar(Personagem &P1, int &f, int *v[]){
+void carregar(Personagem &P1, int &f, int *v[], bool &fruit){
     save.open("save.csv");
     string load;
+    int fruta;
     getline(save, load);
     getline(save, P1.snome);
     getline(save, P1.sclasse);
@@ -564,6 +566,14 @@ void carregar(Personagem &P1, int &f, int *v[]){
     P1.imagia = atoi(load.c_str());
     getline(save, load);
     f = atoi(load.c_str());
+    getline(save, load);
+    fruta = atoi(load.c_str());
+    if(fruta == 0){
+        fruit = false;
+    }
+    else if(fruta == 1){
+        fruit = true;
+    }
     for(int i=0; i<4; i++){
         getline(save, load);
         *v[i] = atoi(load.c_str());
@@ -660,7 +670,7 @@ void Menu(Personagem &P1, int &f){
             cin >> escolha;
             system("cls");
             if(escolha == 1){
-                salvar(P1, f, chec);
+                salvar(P1, f, chec, fruit);
             }
         }
         else{
@@ -675,10 +685,10 @@ void Menu(Personagem &P1, int &f){
         cin >> escolha;
         system("cls");
         if(escolha == 1){
-            for(int i=0; i<30; i++){
+            for(int i=0; i<4; i++){
                 v[i] = &chec[i];
             }
-            carregar(P1, f, v);
+            carregar(P1, f, v, fruit);
         }
         comeco = false;
         Menu(P1, f);

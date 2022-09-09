@@ -13,8 +13,8 @@ using namespace std;
 ifstream salas, menu;
 fstream save;
 string line;
-bool fruit;
-int escolha, p = 0, q = 0, c=0, f=0, chec[30], *v[30];
+bool fruit, comeco=true;;
+int escolha, f=0, chec[30], *v[30];
  //atributos do jogador
 struct Personagem
 {
@@ -134,25 +134,33 @@ void tela_status(Personagem status){
     cout<<"----------------------------------------------------------------------------" << endl;
 }
 
-void batalha(Personagem &P1, int &f){
+void batalha(Personagem &P1, int &f, bool vantagem=false){
     orc.idef = 1 + (rand()%3), orc.ifor = 1 + (rand()%3), orc.ivida = 4;
-    cout << "VOCE ENCONTROU UM ORC!!! PREPARE-SE PARA LUTAR\n\n";
+    if(vantagem == false){
+        cout << "VOCE ENCONTROU UM ORC!!! PREPARE-SE PARA LUTAR!!!\n\n";
+    }
+    else{
+        cout << "VOCE EMBOSCOU O ORC!!! COMEÇOU A BATALHA!!!\n\n";
+    }
     system("pause");
     system ("cls");
+    int turno=0;
     while(P1.ivida > 0 && orc.ivida > 0){
         int ataqueP = P1.ifor + rand()%6;
         int ataqueO = orc.ifor + rand()%6;
         int defesaP = P1.idef + rand()%6;
         int defesaO = orc.idef + rand()%6;
+        if(turno==0 && vantagem==true){
+            ataqueP += 4;
+            defesaP += 4;
+        }
         if(ataqueP > defesaO){
             orc.ivida--;
-            cout << ataqueP << " - " << defesaO;
             cout << "Seu ataque funcionou, vida do Orc: " << orc.ivida << "\n\n";
             system("pause");
             system ("cls");
         }
         else{
-                cout << ataqueP << " - " << defesaO;
             cout << "Seu ataque falhou, vida do Orc: " << orc.ivida << "\n\n";
             system("pause");
             system ("cls");
@@ -168,9 +176,13 @@ void batalha(Personagem &P1, int &f){
             system("pause");
             system ("cls");
         }
+        turno++;
     }
     if(P1.ivida == 0){
-        f=50;
+        cout << "Você morreu!!\n\n";
+        system("pause");
+        system ("cls");
+        f=40;
     }
     if(orc.ivida == 0){
         cout << "Voce ganhou a batalha!!\n\n";
@@ -179,12 +191,35 @@ void batalha(Personagem &P1, int &f){
     }
 }
 
-int escrever(int p, int q,int escolha=0){
+void emboscada(Personagem &jogador,int &f){
+    int teste = jogador.idex;
+    if(jogador.sraca == "Halfling" || jogador.sraca== "Anao"){
+        if(jogador.sclasse == "Ladino"){
+            jogador.idex = jogador.idex+3;
+        }else{
+            jogador.idex=jogador.idex+1;
+        }
+    }
+    if(jogador.idex<=rand()%11){
+        batalha(jogador, f, true);
+    }else{
+        batalha(jogador, f);
+    }
+    if(jogador.sraca =="Halfling" || jogador.sraca=="Anao"){
+        if(jogador.sclasse == "Ladino"){
+            jogador.idex=jogador.idex-3;
+        }else{
+            jogador.idex=jogador.idex-1;
+        }
+    }
+}
+
+int escrever(int LinhaI, int LinhaF,int escolha=0){
     salas.open("jogo.txt");
-    for(int m=0; m<q; m++)
+    for(int m=0; m<LinhaF; m++)
     {
         getline(salas,line);
-        if(m >= p){
+        if(m >= LinhaI){
             cout << line<< endl;
         }
     }
@@ -258,7 +293,10 @@ void Rio(Personagem &P1, int &f){
         escolha = escrever(37,44);
         if(escolha == 1){
             if(P1.sraca == "Anao"){
-                f=50;
+                cout << "Você por ser anao nao consegue nadar muito bem, e a forte correnteza lhe arrasta para as profundezas!!\n\n";
+                system("pause");
+                system("cls");
+                f=40;
             }
             else{
                 f=2;
@@ -275,19 +313,48 @@ void Cabana(Personagem &P1, int &f){
     if(escolha == 1){
         f=3;
     }
-    else if(escolha == 2){
-        batalha(P1, f);
-        if(f==50){}
-        else{
-
+    else if(escolha == 2 && chec[2] == 0){
+        escolha = escrever(251,258);
+        if (escolha == 1){
+            batalha(P1, f);
+            if(f!=40){
+                escrever(280,282,1);
+                system("pause");
+                system("cls");
+            }
+        }
+        else if(escolha == 2){
+            emboscada(P1, f);
+            if(f!=40){
+                escrever(280,282,1);
+                system("pause");
+                system("cls");
+            }
+        }
+        else if(escolha == 3){
+            if(P1.sclasse == "Ladino"){
+                cout << "Voce consegue fugir\n\n";
+                system("pause");
+                system("cls");
+                f=3;
+            }
+        }
+        if(f==40){}
+        else if(escolha!=3){
+            P1.ifor++;
         }
     }
-    else if(escolha == 3 && chec[2] == 0){
+    else if(escolha == 2 && chec[2] == 0){
+        cout << "Nao ha mais nada em volta da casa!!\n\n";
+        system("pause");
+        system("cls");
+    }
+    else if(escolha == 3 && chec[3] == 0){
         P1.ivida+=2;
         f=descansar(P1, f);
-        chec[2]= 1;
+        chec[3]= 1;
     }
-    else if(escolha == 3 && chec[2] == 1){
+    else if(escolha == 3 && chec[3] == 1){
         cout << "Voce ja descansou!\n\n";
         system("pause");
         system ("cls");
@@ -351,7 +418,7 @@ void PedraOrc(Personagem &P1, int &f){
     }
 }
 
-void salvar(Personagem P1, int p, int q, int chec[]){
+void salvar(Personagem P1, int f, int chec[]){
     save.open("save.csv");
     save << "sep=, \n";
     save << P1.snome << "\n";
@@ -374,7 +441,7 @@ void salvar(Personagem P1, int p, int q, int chec[]){
     system("cls");
 }
 
-void carregar(Personagem &P1, int &p, int &q, int *v[]){
+void carregar(Personagem &P1, int &f, int *v[]){
     save.open("save.csv");
     string load;
     getline(save, load);
@@ -464,7 +531,7 @@ void Menu(Personagem &P1, int &f){
     system("cls");
     switch(espera){
     case 1:
-        if(c==0 || f==40)
+        if(comeco == true || f==40)
         {
             f=0;
             IniJogador(P1);
@@ -473,8 +540,7 @@ void Menu(Personagem &P1, int &f){
                 chec[i]=0;
             }
         }
-        escolha=0;
-        c++;
+        comeco = false;
         Fase(P1, f);
         Menu(P1, f);
         break;
@@ -486,12 +552,12 @@ void Menu(Personagem &P1, int &f){
         Menu(P1, f);
         break;
     case 3:
-        if(c!=0){
+        if(comeco == false){
             cout << "Deseja salvar realmente? (1-sim / 2-nao) ";
             cin >> escolha;
             system("cls");
             if(escolha == 1){
-                salvar(P1, p, q, chec);
+                salvar(P1, f, chec);
             }
         }
         else{
@@ -509,9 +575,9 @@ void Menu(Personagem &P1, int &f){
             for(int i=0; i<30; i++){
                 v[i] = &chec[i];
             }
-            carregar(P1, p, q, v);
+            carregar(P1, f, v);
         }
-        c++;
+        comeco = false;
         Menu(P1, f);
         break;
     case 5:

@@ -68,7 +68,7 @@ Seguindo o sinal de fumaca, anda por horas ate chegar aonde
 esta o local de onde vem, voce ve uma vila recem saqueada
 aparentemente faz menos de uma semana, e parece estar vazia...
 =========================================================
-*        1-Descanar numa casa                           *
+*        1-Descansar numa casa                          *
 *        2-Buscar a origem da fumaca                    *
 =========================================================
 
@@ -234,20 +234,20 @@ de diversas racas, eles te seguem, voce recria a vila
 ja destruida, ate que um jovem guerreiro orc vem te 
 desafiar e voce sabe o pq eles estar ali...
 
-voce se esconde se esqueirado ate a vila orc
-1
-sabendo que seu sangue que possui veneno para os orc, 
-2 
-Sabendo que talvez a fruta que voce tinha pego possa ser 
-venenosa,
-1 e 2
-vai ate a fonte de aqua e comida deles e os envenena,
-esperado que uma parte deles comeram. 
-3
-o chefe orc o ve se esqueirado e preparado
-para batalha
+Voce se esconde e se esgueira ate a vila orc, na qual voce
+sabendo que talvez a fruta que voce tinha pego possa ser 
+venenosa, voce pode tentar envenenar a fonte da agua que 
+eles bebem, ou apenas embosca-los.
 
-Voce olhar em volta da casa, ve ums orc patrulhado ali
+=========================================================
+*        1-Emboscar                                     *
+*        2-Envenenar agua com a fruta                   *
+=========================================================
+
+
+
+
+Voce olhar em volta da casa, e ve um orc patrulhando ali.
 =========================================================
 *        1-Atacar                                       *
 *        2-Emboscar                                     *
@@ -279,6 +279,18 @@ aberto.
 
 
 Apos derrotar o orc, voce consegue itens que lhe deixam mais forte!!! Forca +1.
+
+Voce envenena a agua utilizada pelos orcs, eles bebem e ficam fracos
+o chefe orc tambem envenenado, fica enfurecido e lhe avista de longe,
+mesmo estando mais fraco ele parte para a batalha com voce!!!
+
+Voce se esconde e se esgueira ate a vila orc, e emboscar
+os orcs acabada sendo a ultima opcao que voce tem, desta
+forma voce avanca para uma emboscada, e o chefe orc que
+esta la para lhe receber, voce o pega despreparado e assim
+comecara a ultima batalha!!!
+
+
 
 
 FIM

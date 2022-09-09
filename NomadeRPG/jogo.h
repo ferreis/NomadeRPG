@@ -13,7 +13,7 @@ using namespace std;
 ifstream salas, menu;
 fstream save;
 string line;
-bool fruit, comeco=true;
+bool fruit = false, comeco = true, *PontFruit;
 int escolha, f=0, chec[4], *v[4];
  //atributos do jogador
 struct Personagem
@@ -136,7 +136,7 @@ void tela_status(Personagem status){
     cout<<"----------------------------------------------------------------------------" << endl;
 }
 
-void batalha(Personagem &P1, int &f, bool vantagem=false, bool chefe=false){
+void batalha(Personagem &P1, int &f, bool vantagem=false, bool chefe=false, bool veneno = false){
     orc.idef = 1 + (rand()%3), orc.ifor = 1 + (rand()%3), orc.ivida = 4;
     if(chefe == true){
         cout << "VOCE CHEGOU A BATALHA FINAL CONTRA O CHEFE ORC, PREPARE-SE!!!\n\n";
@@ -160,8 +160,12 @@ void batalha(Personagem &P1, int &f, bool vantagem=false, bool chefe=false){
             defesaP += 4;
         }
         if(chefe == true){
-            ataqueO +=3;
-            defesaO +=3;
+            ataqueO +=4;
+            defesaO +=4;
+        }
+        if(veneno == true){
+            ataqueO -=2;
+            defesaO -=2;
         }
         if(P1.sclasse == "Mago"){
             ataqueP += rand()%P1.imagia;
@@ -183,7 +187,7 @@ void batalha(Personagem &P1, int &f, bool vantagem=false, bool chefe=false){
             system("pause");
             system ("cls");
         }
-        else if((ataqueO < defesaP) && orc.ivida >0){
+        else if((ataqueO <= defesaP) && orc.ivida >0){
             cout << "Ataque do orc falhou, sua vida: " << P1.iatualvida << "\n\n";
             system("pause");
             system ("cls");
@@ -203,7 +207,7 @@ void batalha(Personagem &P1, int &f, bool vantagem=false, bool chefe=false){
     }
 }
 
-void emboscada(Personagem &jogador,int &f){
+void emboscada(Personagem &jogador, int &f, bool chefe = false){
     int teste = jogador.idex;
     if(jogador.sraca == "Halfling" || jogador.sraca== "Anao"){
         if(jogador.sclasse == "Ladino"){
@@ -212,10 +216,19 @@ void emboscada(Personagem &jogador,int &f){
             jogador.idex=jogador.idex+1;
         }
     }
-    if(jogador.idex<=rand()%11){
-        batalha(jogador, f, true);
-    }else{
-        batalha(jogador, f);
+    if(chefe == false){
+        if(jogador.idex<=rand()%11){
+            batalha(jogador, f, true);
+        }else{
+            batalha(jogador, f);
+        }
+    }
+    else{
+        if(jogador.idex<=rand()%11){
+            batalha(jogador, f, true, true);
+        }else{
+            batalha(jogador, f, false, true);
+        }
     }
     if(jogador.sraca =="Halfling" || jogador.sraca=="Anao"){
         if(jogador.sclasse == "Ladino"){
@@ -297,7 +310,8 @@ void Rio(Personagem &P1, int &f){
             cout << "Fruta adiquirida!\n\n";
             system("pause");
             system("cls");
-            fruit = true;
+            PontFruit= &fruit;
+            *PontFruit = true;
         }
         chec[0]=1;
     }
@@ -464,9 +478,47 @@ void PedraOrc(Personagem &P1, int &f){
         }
     }
     else if(escolha == 3){
-
+        if(fruit == true){
+            escolha = escrever(236,246);
+        }
+        else{
+            escrever(286,292,1);
+            escolha = 1;
+        }
+        if(escolha == 1){
+            emboscada(P1, f, true);
+            if(f!=40){
+                escrever(230,236,1);
+                f=40;
+                system("pause");
+                system("cls");
+            }
+            else{
+                escrever(228,230,1);
+                system("pause");
+                system("cls");
+            }
+        }
+        else if(escolha == 2){
+            escrever(282,286,1);
+            system("pause");
+            system("cls");
+            batalha(P1, f, false, true, true);
+            if(f!=40){
+                escrever(230,236,1);
+                f=40;
+                system("pause");
+                system("cls");
+            }
+            else{
+                escrever(228,230,1);
+                system("pause");
+                system("cls");
+            }
+        }
     }
 }
+
 
 void salvar(Personagem P1, int f, int chec[]){
     save.open("save.csv");

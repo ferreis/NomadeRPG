@@ -1,9 +1,9 @@
 # depslib dependency file v1.0
-1662607490 source:c:\users\rafa_\documents\nomaderpg\main.cpp
+1662757125 source:c:\users\rafa_\onedrive\documentos\nomaderpg-toscano\nomaderpg\main.cpp
 	<iostream>
 	"jogo.h"
 
-1662653723 c:\users\rafa_\documents\nomaderpg\jogo.h
+1662759548 c:\users\rafa_\onedrive\documentos\nomaderpg-toscano\nomaderpg\jogo.h
 	<iostream>
 	<stdlib.h>
 	<fstream>

@@ -88,12 +88,12 @@ usando os mesmos tipos de roupas que voce, so que muito
 mais velhas e esfarrapadas que a sua, com uma mochila no lado,
 os olhos parecem vazios, ele te olha e comeca a falar, 
 ignorado sua existencia.
- =========================================================
+=========================================================
 *        1-Escutar                                      *
 *        2-Atacar                                       *
 *        3-Ignorar                                      *                
-*        4-Perguntar                                    *
 =========================================================
+
 
 Voce tenta atacar a figura misteriosa, ele consegue esquivar
 com facilidade.
@@ -104,26 +104,26 @@ no chao, ao olhar ve que e um mapa escrito "Pedra do ritual
 Orc"
 
 =========================================================
-*        1-Ir ate a pedra de sanque                     *
+*        1-Ir ate a pedra de sangue                     *
 *        2-Viver na vila                                *
 =========================================================
 
 Voce tenta falar com o estranho, ele so te ignora e continua
 falando.
- =========================================================
+=========================================================
 *        1-Escutar                                      *
 *        2-Atacar                                       *
-*        3-Ignorar                                      *                
-*        4-Perguntar                                    *
+*        3-Ignorar                                      *
 =========================================================
 
-Voce ignorar ele, ao ver que esta sendo ignorado o estranho
+Voce ignora ele, ao ver que esta sendo ignorado o estranho
 se levanta e deixa um papel no chao, ao olhar o papel voce
 ve que e um mapa escrito "Pedra do ritual Orc"
 =========================================================
-*        1-Ir ate a pedra de sanque                     *
+*        1-Ir ate a pedra de sangue                     *
 *        2-Viver na vila                                *
 =========================================================
+
 
 Voce senta e comeca a escutar o que o ser misterioso fala
 "A muito, eles viviam na vila em paz com todos os outros,
@@ -137,7 +137,7 @@ e fala "o que tiver naquela mochila e seu por direito",
 ele tira o pergaminho do bolso abre e some com os ventos.
 voce repara no chao a um mapa escrito "Pedra do ritual Orc".
 =========================================================
-*        1-Ir ate a pedra de sanque                     *
+*        1-Ir ate a pedra de sangue                     *
 *        2-Pegar o que tiver na mochila                 *
 *        3-Viver na vila                                *
 =========================================================
@@ -161,12 +161,12 @@ de desintegrar, e o ativa se desfazendo aos ventos.
 
 Voce anda ate a pedra do ritual orc quando chega ve uma pedra central 
 cheia de sangue e varias versoes de voce morto nessa pedra, entao a memoria 
-que nunca a vinda se lembrado vem em sua mente, voce é o filho do deus esquecido
+que nunca a vinda se lembrado vem em sua mente, voce e o filho do deus esquecido
 um semi-deus, vivia em uma vila cheia de vida todas as racas em paz, voce tinha 
 um filho, mas um fatidico dia um voce ve um outro semi-deus e chefe dos orc Thrall 
 carregando o corpo do seu filho, sem saber o que tinha acontecido uma raiva o
 domina e voce ataca o orc sem nem perguntar, ele empunha seu machado voces
-dois começam a um lutar, essa batalha veio a destruir tudo que existia, os 
+dois comecam a lutar, essa batalha veio a destruir tudo que existia, os 
 deuses enfurecido com o ato de destruir o mundo que eles criaram, os aprisionam 
 em um mundo em que o tempo vem a se repetir, sem poderes, sem memoria,sem desejos
 esse era o castigo dos dois.
@@ -186,7 +186,7 @@ Thrall - "Enfim, voce me matara, aquele que um dia chamei de amigo"
 Voce - "Nao vim por sua cabaça Thrall, vim para perdoar"
 Thrall - "O que vo-voce vai realmente m..., sendo assim
 tenho uma proposta..., vamos ate a pedra de sangue para 
-quebrar a maldição do tempo, isso fara a dor sumir e o 
+quebrar a maldicao do tempo, isso fara a dor sumir e o 
 tempo nao mais se repetir, voce aceita?"
 =========================================================
 *        1-Aceitar                                      *
@@ -221,20 +221,18 @@ Voce -"Vou, esta na hora de um descanso mesmo".
 Voce vive uma vida tranquila e sem arrependimentos na vila.
 
 Batalha chefe dos orc
-em raivecido pelos acontencimento esquecido voce parte para 
-o ataque,
-
-Quando começa o ataque aos orcs, Thrall o lider deles 
+Enraivecido pelos acontencimento esquecidos voce parte para 
+o ataque,quando comeca o ataque aos orcs, Thrall o lider deles 
 aparece e o empede de continuar se nao estiver 
 preparado para lutar
 
-Thrall - Morte te acompanha mais uma vez, velho amigo.
+Thrall - A morte te acompanha mais uma vez, velho amigo.
 
-voce ganha do chefe orc, o corpo dele jogado ao chao, 
-voce ve todos os orc da vila se tranformar em pessoas 
-de diversas raca, eles te seguem, voce recria a vila
+Voce ganha do chefe orc, o corpo dele jogado ao chao, 
+voce ve todos os orc da vila se tranformarem em pessoas 
+de diversas racas, eles te seguem, voce recria a vila
 ja destruida, ate que um jovem guerreiro orc vem te 
-desafiar e voce sabe o pq eles estar ali...[fim]
+desafiar e voce sabe o pq eles estar ali...
 
 voce se esconde se esqueirado ate a vila orc
 1
@@ -277,6 +275,10 @@ ate um bau.
 Entre os armario voce ve uma pedra facimente identificavel
 e aperta ela, voce e um nova sala se abrindo com um cofre 
 aberto.
+
+
+
+Apos derrotar o orc, voce consegue itens que lhe deixam mais forte!!! Forca +1.
 
 
 FIM
